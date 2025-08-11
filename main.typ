@@ -58,6 +58,18 @@ $
 $ <eq:ansatz-f_inflaton>
 where $epsilon -> 0^+$ is an infinitesimal variable.
 
+We also present the decay width of the channel of $inflaton -> phi phi$ here as
+$
+  Gamma_inflaton = & 1 / (2 m_inflaton) integral tilde("d" k_1) tilde("d" k_2) (2 pi)^4 delta^((4))(p - k_1 - k_2) 1/ 2 abs(cal(M)_(inflaton -> phi phi))^2 \
+  = & lambda^2 / (4 m_inflaton) integral tilde("d" k_1) tilde("d" k_2) (2 pi)^4 delta^((4))(p - k_1 - k_2) \
+  = & lambda^2 / (4 m_inflaton) integral ("d"^3 arrow(k)_1) / ((2 pi)^3 2 E_1) lr(1 / (2 E_2) (2 pi) delta(m_inflaton - E_1 - E_2)|)_(E_2 = E_1) \
+  = & lambda^2 / (4 m_inflaton) integral_0^oo ("k"^2 "d" "k") / (2 pi^2) (2 pi) / (4 E^2) delta(m_inflaton - 2 E) \
+  = & lambda^2 / (4 m_inflaton) integral_(m_phi)^oo (E "d" E) / (4 pi E^2)  sqrt(E^2 - m_phi^2) delta(m_inflaton - 2 E) \
+  = & lambda^2 / (4 m_inflaton) integral_(m_phi)^oo ("d" E) / (4 pi E) sqrt(E^2 - m_phi^2) / 2 delta(m_inflaton / 2 - E) \
+  = & lambda^2 / (32 pi m_inflaton^2) sqrt(m_inflaton^2 - 4 m_phi^2)
+  attach(=, bl: #text(purple, $(m_phi -> 0)$)) lambda^2 / (32 pi m_inflaton).
+$
+
 = Without Back-reaction
 
 == For inflaton
@@ -215,8 +227,6 @@ $ \
 //   E_1^((max)) = & 1 / 2 (sqrt(m_inflaton^2 + epsilon^2) + epsilon).
 // $ <eq:E_1-min-max-new>
 
-== Solution
-
 = With Back-reaction
 
 == For Inflaton
@@ -319,8 +329,8 @@ $
 $
 Or equivalently,
 $
-  (partial tilde(f)_phi) / (partial a) = (pi lambda^2) / (2 m_inflaton^3 H) n_inflaton (t) delta(tilde("k")_1 - m_inflaton / 2 a) [1 + tilde(f)_phi (a, m_inflaton / 2 a)],
-$
+  (partial tilde(f)_phi) / (partial a) = (pi lambda^2) / (2 m_inflaton^3 H) n_inflaton (a) delta(tilde("k")_1 - m_inflaton / 2 a) [1 + tilde(f)_phi (a, m_inflaton / 2 a)],
+$ <eq:tilde-f_reheaton-evolution>
 whose solution is given by
 $
   tilde(f)_phi (a, tilde("k")_1) = & exp[integral_(a_I)^a (pi lambda^2 n(a')) / (2 m_inflaton^3 H(a')) delta(tilde("k")_1 - m_inflaton / 2 a') "d" a'] - 1 \
@@ -436,4 +446,37 @@ $
 For $epsilon -> 0$, it reads
 $
   ("d" n_inflaton) / ("d" a) + (3 + (lambda^2) / (32 pi H m_inflaton) [1 + f_phi (t, m_inflaton / 2)]) (n_inflaton (a)) / a = 0.
+$ <eq:number-density-evolution-inflaton>
+
+= Analysis of Solution
+
+In this section, we will analyze the details of the evolutions of the inflaton and reheaton.
+First, we notice that Eq.~@eq:tilde-f_reheaton-evolution can be integrated in the phase space of $tilde("k")_1$, which leads to
 $
+  integral ("d"^3 arrow(k)_1) / (2 pi)^3 E_1 (partial tilde(f)_phi) / (partial a) & = integral ("d"^3 arrow(k)_1) / (2 pi)^3 E_1 (pi lambda^2) / (2 m_inflaton^3 H) n_inflaton (a) delta(tilde("k")_1 - m_inflaton / 2 a) [1 + tilde(f)_phi (a, m_inflaton / 2 a)] \
+  integral_0^oo ("k"_1^3 "d" "k"_1) / (2 pi^2) (partial tilde(f)_phi) / (partial a) & = integral_0^oo ("k"_1^3 "d" "k"_1) / (2 pi^2) (pi lambda^2) / (2 m_inflaton^3 H) n_inflaton (a) delta(tilde("k")_1 - m_inflaton / 2 a) [1 + tilde(f)_phi (a, m_inflaton / 2 a)] \
+  integral_0^oo 1 / a^4 (tilde("k")_1^3 "d" tilde("k")_1) / (2 pi^2) (partial tilde(f)_phi) / (partial a) & = integral_0^oo 1 / a^4 (tilde("k")_1^3 "d" tilde("k")_1) / (2 pi^2) (pi lambda^2) / (2 m_inflaton^3 H) n_inflaton (a) delta(tilde("k")_1 - m_inflaton / 2 a) [1 + tilde(f)_phi (a, m_inflaton / 2 a)] \
+  "d" / ("d" a) integral_0^oo (tilde("k")_1^3 "d" tilde("k")_1) / (2 pi^2) tilde(f)_phi (a, tilde("k")_1) & = integral_0^oo (tilde("k")_1^3 "d" tilde("k")_1) / (2 pi^2) (pi lambda^2) / (2 m_inflaton^3 H) n_inflaton (a) delta(tilde("k")_1 - m_inflaton / 2 a) [1 + tilde(f)_phi (a, m_inflaton / 2 a)] \
+  "d" / ("d" a) (rho_phi a^4) & = 1 / (2 pi^2) (m_inflaton / 2 a)^3 (pi lambda^2) / (2 m_inflaton^3 H) n_inflaton (a) [1 + tilde(f)_phi (a, m_inflaton / 2 a)] \
+  & = (lambda^2) / (32 pi H) (n_inflaton a^3) [1 + tilde(f)_phi (a, m_inflaton / 2 a)].
+$
+According to Eq.~@eq:full-solution-to-f_reheaton-1, we have
+$
+  tilde(f)_phi (a, m_inflaton / 2 a) = exp[(pi lambda^2 n_inflaton (a)) / (m_inflaton^4 H(a))] - 1.
+$
+Therefore,
+$
+  "d" / ("d" a) (rho_phi a^4) = (lambda^2) / (32 pi H) (n_inflaton a^3) exp[(pi lambda^2 n_inflaton (a)) / (m_inflaton^4 H(a))].
+$
+Also, we have that
+$
+  "d" / ("d" a) (rho_inflaton a^3) = & -lambda^2 / (32 pi H) (n_inflaton a^3) [1 + f_phi (t, m_inflaton / 2)] \
+  = & -lambda^2 / (32 pi H) (n_inflaton a^3) exp[(pi lambda^2 n_inflaton (a)) / (m_inflaton^4 H(a))],
+$
+which is derived from Eq.~@eq:number-density-evolution-inflaton.
+Thus, we have the continuity equation as
+$
+  "d" / ("d" a) (rho_inflaton a^3 + rho_phi a^4) = 0.
+$ \
+
+If there is no Bose-Einstein enhancement, we have $1 + f_phi -> 1$ in Eqs.~@eq:full-solution-to-f_reheaton-1 and Eq.~@eq:number-density-evolution-inflaton, which leads to

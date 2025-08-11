@@ -70,7 +70,7 @@ $
   attach(=, bl: #text(purple, $(m_phi -> 0)$)) lambda^2 / (32 pi m_inflaton).
 $
 
-= Without Back-reaction
+= Forward Reaction
 
 == For inflaton
 
@@ -78,13 +78,13 @@ Without the back-reaction, the collision term for the BTE of Eq.~@eq:BTE-inflato
 $
   #text(blue)[$Gamma_inflaton [f_inflaton]$] (t, "p") = & -1 / (2 E_inflaton) integral tilde("d" k_1) tilde("d" k_2) (2 pi)^4 delta^((4))(p - k_1 - k_2) abs(cal(M)_(inflaton <-> phi phi))^2 / 2 \
   & times f_inflaton (t, "p") [1 + f_phi (t, "k"_1)] [1 + f_phi (t, "k"_2)] \
-  equiv & #text(blue)[$Gamma_inflaton^((inflaton))$] [f_inflaton] (t, "p") + 2 #text(blue)[$Gamma_inflaton^((phi))$] [f_inflaton] (t, "p") + #text(blue)[$Gamma_inflaton^((phi phi))$] [f_inflaton] (t, "p"),
+  equiv & #text(blue)[$Gamma_inflaton^((inflaton))$] [f_inflaton] (t, "p") + 2 #text(blue)[$Gamma_inflaton^((inflaton phi))$] [f_inflaton] (t, "p") + #text(blue)[$Gamma_inflaton^((inflaton phi phi))$] [f_inflaton] (t, "p"),
 $
 where we have defined three terms as
 $
   #text(blue)[$Gamma_inflaton^((inflaton))$] [f_inflaton] (t, "p") := & -1 / (2 E_inflaton) lambda^2 / 2 integral tilde("d" k_1) tilde("d" k_2) (2 pi)^4 delta^((4))(p - k_1 - k_2) f_inflaton (t, "p"), \
-  #text(blue)[$Gamma_inflaton^((phi))$] [f_inflaton] (t, "p") := & -1 / (2 E_inflaton) lambda^2 / 2 integral tilde("d" k_1) tilde("d" k_2) (2 pi)^4 delta^((4))(p - k_1 - k_2) f_inflaton (t, "p") f_phi (t, "k"_1), \
-  #text(blue)[$Gamma_inflaton^((phi phi))$] [f_inflaton] (t, "p") := & -1 / (2 E_inflaton) lambda^2 / 2 integral tilde("d" k_1) tilde("d" k_2) (2 pi)^4 delta^((4))(p - k_1 - k_2) f_inflaton (t, "p") f_phi (t, "k"_1) f_phi (t, "k"_2).
+  #text(blue)[$Gamma_inflaton^((inflaton phi))$] [f_inflaton] (t, "p") := & -1 / (2 E_inflaton) lambda^2 / 2 integral tilde("d" k_1) tilde("d" k_2) (2 pi)^4 delta^((4))(p - k_1 - k_2) f_inflaton (t, "p") f_phi (t, "k"_1), \
+  #text(blue)[$Gamma_inflaton^((inflaton phi phi))$] [f_inflaton] (t, "p") := & -1 / (2 E_inflaton) lambda^2 / 2 integral tilde("d" k_1) tilde("d" k_2) (2 pi)^4 delta^((4))(p - k_1 - k_2) f_inflaton (t, "p") f_phi (t, "k"_1) f_phi (t, "k"_2).
 $ <eq:Gamma-inflaton>
 Then we can calculate these terms one by one.
 
@@ -109,24 +109,24 @@ $
   #text(blue)[$Gamma_inflaton^((inflaton))$] [f_inflaton] (t, "p") = -(lambda^2) / (32 pi E_inflaton) f_inflaton (t, "p").
 $ \
 
-For #text(blue)[$Gamma_inflaton^((phi))$] and #text(blue)[$Gamma_inflaton^((phi phi))$], we have
+For #text(blue)[$Gamma_inflaton^((inflaton phi))$] and #text(blue)[$Gamma_inflaton^((inflaton phi phi))$], we have
 $
-  #text(blue)[$Gamma_inflaton^((phi))$] [f_inflaton] (t, "p") & = -(lambda^2) / (32 pi E_inflaton "p") f_inflaton (t, "p") integral_(E_1^((min)))^(E_1^((max))) f_phi (t, sqrt(E_1^2 - m_phi^2)) "d" E_1 \
+  #text(blue)[$Gamma_inflaton^((inflaton phi))$] [f_inflaton] (t, "p") & = -(lambda^2) / (32 pi E_inflaton "p") f_inflaton (t, "p") integral_(E_1^((min)))^(E_1^((max))) f_phi (t, sqrt(E_1^2 - m_phi^2)) "d" E_1 \
   & = (Gamma_inflaton^((inflaton)) [f_inflaton] (t, "p")) / "p" integral_(E_1^((min)))^(E_1^((max))) f_phi (t, sqrt(E_1^2 - m_phi^2)) "d" E_1
 $
 and
 $
-  #text(blue)[$Gamma_inflaton^((phi phi))$] [f_inflaton] (t, "p") = & -(lambda^2) / (32 pi E_inflaton "p") f_inflaton (t, "p") \
+  #text(blue)[$Gamma_inflaton^((inflaton phi phi))$] [f_inflaton] (t, "p") = & -(lambda^2) / (32 pi E_inflaton "p") f_inflaton (t, "p") \
   & #h(2em) times integral_(E_1^((min)))^(E_1^((max))) f_phi (t, sqrt(E_1^2 - m_phi^2)) f_phi (t, sqrt((E_inflaton - E_1)^2 - m_phi^2)) "d" E_1 \
   = & (Gamma_inflaton^((inflaton)) [f_inflaton] (t, "p")) / "p" integral_(E_1^((min)))^(E_1^((max))) f_phi (t, sqrt(E_1^2 - m_phi^2)) f_phi (t, sqrt((E_inflaton - E_1)^2 - m_phi^2)) "d" E_1.
 $
 If $m_phi = 0$, the above expressions reduce to
 $
-  #text(blue)[$Gamma_inflaton^((phi))$] [f_inflaton] (t, "p") = (Gamma_inflaton^((inflaton)) [f_inflaton] (t, "p")) / "p" integral_(E_inflaton / 2 - "p" / 2)^(E_inflaton / 2 + "p" / 2) f_phi (t, E_1) "d" E_1
+  #text(blue)[$Gamma_inflaton^((inflaton phi))$] [f_inflaton] (t, "p") = (Gamma_inflaton^((inflaton)) [f_inflaton] (t, "p")) / "p" integral_(E_inflaton / 2 - "p" / 2)^(E_inflaton / 2 + "p" / 2) f_phi (t, E_1) "d" E_1
 $
 and
 $
-  #text(blue)[$Gamma_inflaton^((phi phi))$] [f_inflaton] (t, "p") = (Gamma_inflaton^((inflaton)) [f_inflaton] (t, "p")) / "p" integral_(E_inflaton / 2 - "p" / 2)^(E_inflaton / 2 + "p" / 2) f_phi (t, E_1) f_phi (t, E_inflaton - E_1) "d" E_1.
+  #text(blue)[$Gamma_inflaton^((inflaton phi phi))$] [f_inflaton] (t, "p") = (Gamma_inflaton^((inflaton)) [f_inflaton] (t, "p")) / "p" integral_(E_inflaton / 2 - "p" / 2)^(E_inflaton / 2 + "p" / 2) f_phi (t, E_1) f_phi (t, E_inflaton - E_1) "d" E_1.
 $
 Therefore,
 $
@@ -227,14 +227,14 @@ $ \
 //   E_1^((max)) = & 1 / 2 (sqrt(m_inflaton^2 + epsilon^2) + epsilon).
 // $ <eq:E_1-min-max-new>
 
-= With Back-reaction
+= Back Reaction
 
 == For Inflaton
 
 Here we only consider the back-reaction term, which reads
 $
   #text(red)[$Gamma_inflaton$] [f_inflaton] (t, "p") = & 1 / (2 E_inflaton) integral tilde("d" k_1) tilde("d" k_2) (2 pi)^4 delta^((4))(p - k_1 - k_2) abs(cal(M)_(inflaton <-> phi phi))^2 / 2  [1 + f_inflaton (t, "p")] f_phi (t, "k"_1) f_phi (t, "k"_2) \
-  equiv & #text(red)[$Gamma_inflaton^((phi phi))$] [f_inflaton] (t, "p") - #text(blue)[$Gamma_inflaton^((phi phi))$] [f_inflaton] (t, "p"),
+  equiv & #text(red)[$Gamma_inflaton^((phi phi))$] [f_inflaton] (t, "p") - #text(blue)[$Gamma_inflaton^((inflaton phi phi))$] [f_inflaton] (t, "p"),
 $
 where $Gamma_inflaton^((phi phi)) [f_inflaton]$ is calculated in Eq.~@eq:Gamma-inflaton, and
 $
@@ -247,7 +247,7 @@ Along with the collision term without back-reaction, we have the total collision
 $
   & Gamma_inflaton [f_inflaton] (t, "p") \
   := & #text(blue)[$Gamma_inflaton$] [f_inflaton] (t, "p") + #text(red)[$Gamma_inflaton$] [f_inflaton] (t, "p") \
-  = & #text(blue)[$Gamma_inflaton^((inflaton))$] [f_inflaton] (t, "p") + 2 #text(blue)[$Gamma_inflaton^((phi))$] [f_inflaton] (t, "p") + #text(red)[$Gamma_inflaton^((phi phi))$] [f_inflaton] (t, "p") \
+  = & #text(blue)[$Gamma_inflaton^((inflaton))$] [f_inflaton] (t, "p") + 2 #text(blue)[$Gamma_inflaton^((inflaton phi))$] [f_inflaton] (t, "p") + #text(red)[$Gamma_inflaton^((phi phi))$] [f_inflaton] (t, "p") \
   = & -(lambda^2) / (32 pi E_inflaton) [f_inflaton (t, "p") (1 + 2 / "p" integral_(E_phi^((min)))^(E_phi^((max))) f_phi (t, sqrt(E_1^2 - m_phi^2)) "d" E_1) \
   & #h(6em) - 1 / "p" integral_(E_phi^((min)))^(E_phi^((max))) f_phi (t, sqrt(E_1^2 - m_phi^2)) f_phi (t, sqrt((E_inflaton - E_1)^2 - m_phi^2)) "d" E_1] \
   attach(=, bl: #text(purple, $(m_phi -> 0)$)) & (lambda^2) / (32 pi E_inflaton) [1 / "p" integral_(E_inflaton / 2 - "p" / 2)^(E_inflaton / 2 + "p" / 2) f_phi (t, E_1) f_phi (t, E_inflaton - E_1) "d" E_1 - f_inflaton (t, "p") (1 + 2 / "p" integral_(E_inflaton / 2 - "p" / 2)^(E_inflaton / 2 + "p" / 2) f_phi (t, E_1) "d" E_1)].
@@ -321,7 +321,7 @@ $ <eq:RHS-of-BTE-reheaton-full-1-without-last-term>
 where the last equality is based on Eq.~@eq:tilde-f_reheaton-out-of-range.
 With the change of variables as $t -> a(t)$ and $tilde("k")_1 := "k"_1 a(t)$, _i.e._, $f_phi (t, "k"_1) = tilde(f)_phi (a, tilde("k")_1)$, the above equation can be rewritten as
 $
-  (partial f_phi) / (partial t) - H "k"_1 (partial f_phi) / (partial "k"_1) = & (partial a) / (partial t) (partial tilde(f)_phi) / (partial a) + (partial tilde("k")) / (partial t) (partial tilde(f)_phi) / (partial tilde("k")_1) - H "k"_1 ((partial a) / (partial "k"_1) (partial tilde(f)_phi) / (partial a) + (partial tilde("k")_1) / (partial "k"_1) (partial tilde(f)_phi) / (partial tilde("k")_1)) \
+  (partial f_phi) / (partial t) - H "k"_1 (partial f_phi) / (partial "k"_1) = & (partial a) / (partial t) (partial tilde(f)_phi) / (partial a) + (partial tilde("k")_1) / (partial t) (partial tilde(f)_phi) / (partial tilde("k")_1) - H "k"_1 ((partial a) / (partial "k"_1) (partial tilde(f)_phi) / (partial a) + (partial tilde("k")_1) / (partial "k"_1) (partial tilde(f)_phi) / (partial tilde("k")_1)) \
   = & H a (partial tilde(f)_phi) / (partial a) \
   = & (pi lambda^2) / (2 m_inflaton^3) n_inflaton (t) delta(E_1 - m_inflaton / 2) [1 + f_phi (t, m_inflaton / 2) + cal(O)(epsilon)] \
   = & (pi lambda^2) / (2 m_inflaton^3) n_inflaton (t) delta("k"_1 - m_inflaton / 2) [1 + tilde(f)_phi (a, m_inflaton / 2 a)] \
@@ -428,7 +428,7 @@ $ \
 Hence, the BTE becomes
 $
   (partial f_inflaton) / (partial t) - H "p" (partial f_inflaton) / (partial "p") = -lambda^2 / (32 pi E_inflaton) f_inflaton (t, "p") [1 + f_phi (t, m_inflaton / 2)].
-$
+$ <eq:BTE-inflaton-final>
 With the change of variables as $t -> a(t)$ and $tilde("p") := "p" a(t)$, _i.e._, $f_inflaton (t, "p") = tilde(f)_inflaton (a, tilde("p"))$, the above equation can be rewritten as
 $
   H a (partial tilde(f)_inflaton) / (partial a) = -lambda^2 / (32 pi E_inflaton) tilde(f)_inflaton (a, tilde("p")) [1 + f_phi (t, m_inflaton / 2)].
@@ -471,12 +471,11 @@ $
 Also, we have that
 $
   "d" / ("d" a) (rho_inflaton a^3) = & -lambda^2 / (32 pi H) (n_inflaton a^3) [1 + f_phi (t, m_inflaton / 2)] \
-  = & -lambda^2 / (32 pi H) (n_inflaton a^3) exp[(pi lambda^2 n_inflaton (a)) / (m_inflaton^4 H(a))],
+  = & -lambda^2 / (32 pi a H) (n_inflaton a^3) exp[(pi lambda^2 n_inflaton (a)) / (m_inflaton^4 H(a))],
 $
 which is derived from Eq.~@eq:number-density-evolution-inflaton.
 Thus, we have the continuity equation as
 $
-  "d" / ("d" a) (rho_inflaton a^3 + rho_phi a^4) = 0.
-$ \
-
-If there is no Bose-Einstein enhancement, we have $1 + f_phi -> 1$ in Eqs.~@eq:full-solution-to-f_reheaton-1 and Eq.~@eq:number-density-evolution-inflaton, which leads to
+  a "d" / ("d" a) (rho_inflaton a^3) + "d" / ("d" a) (rho_phi a^4) = 0,
+$
+which is indeed the continuity equation.

@@ -1,0 +1,347 @@
+% Copyright (c) 2025 Quan-feng WU <wuquanfeng@ihep.ac.cn>
+% 
+% This software is released under the MIT License.
+% https://opensource.org/licenses/MIT
+
+\documentclass{article}
+
+\usepackage{amsmath}
+% \usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{authblk}
+\usepackage[sorting=none, style=numeric-comp]{biblatex}
+    \addbibresource{from_inspirehep.bib}
+    \addbibresource{others.bib}
+\usepackage[inline]{enumitem}
+\usepackage{fontawesome5}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage[
+    colorlinks=true,
+    anchorcolor=violet,
+    citecolor=orange,
+    linkcolor=blue,
+    urlcolor=magenta
+]{hyperref}
+% \usepackage[color={1 0 .5}]{attachfile2}
+% \usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{slashed}
+\usepackage{subcaption}
+\usepackage{tensor}
+\usepackage{xcolor}
+
+\input{LaTeX-commands}
+\input{math-commands}
+
+\title{Note on Collision Term with Bose-Einstein Enhancement Phase Space Distribution}
+\author{Quan-feng WU\email{wuquanfeng@ihep.ac.cn}}
+\affil{
+    Institute of High Energy Physics, Chinese Academy of Sciences, \\
+    Beijing 100049, China
+}
+\date{\today\license}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \TBA
+\end{abstract}
+\noindent\hrulefill
+
+\tableofcontents
+\noindent\hrulefill
+\clearpage
+
+\section{Preliminaries}
+
+We are now consider the Boltzmann equation for gravitons as
+\begin{equation}
+    \pdv{f_h}{t} - H \rmp_h \pdv{f_H}{\rmp_h} = \CT[f_h].
+    \label{eq:BTE-for-f_h}
+\end{equation}
+For the process $\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)$, the collision term is given by
+\begin{equation}
+    \begin{aligned}
+        \CT[f_h][\varphi \varphi \to h h] & = & & \frac{1}{2 E_1^{(h)}} \int \tildedp{p_1} ~ \tildedp{p_2} ~ \tildedp{k_2} ~ \twopidelta[4]{p_1 + p_2 - k_1 - k_2} \\
+        & & & \qquad {} \times \frac{S_\mathrm{R}^{(h)}}{S_\mathrm{L} S_\mathrm{R}} \sumAmpNormSqr{\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)} f_\varphi(p_1) f_\varphi(p_2) \\
+        & = & & \frac{1}{4 E_1^{(h)}} \int \tildedp{p_1} ~ \tildedp{p_2} ~ \tildedp{k_2} ~ \twopidelta[4]{p_1 + p_2 - k_1 - k_2} \\
+        & & & \qquad {} \times \sumAmpNormSqr{\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)} f_\varphi(p_1) f_\varphi(p_2),
+    \end{aligned}
+\end{equation}
+where we have applied $S_\mathrm{L} = 2!$ and $S_\mathrm{R} = S_\mathrm{R}^{(h)} = 2!$ for the identical particles in the left and right sides of the reaction, respectively.
+The corresponding norm squared of amplitude that summed over the left- and right-hand side degrees of freedom is given by \cite[Eq.~(A.19)]{Bernal:2025lxp}
+\begin{equation}
+    \sumAmpNormSqr{\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)} = \frac{2 t^2 u^2}{\MPl^4 s^2} = \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2},
+\end{equation}
+where we have applied that $s + t + u = 0$ for all the external particles being massless.
+
+The phase space distribution of the reheaton $\varphi$ is given by
+\begin{equation}
+    f_\varphi(t, \rmp_\varphi) = \tilde{f}_\varphi(a, \rmp_\varphi) = \exp[\frac{\pi \lambda^2 n_\phi(a')}{m_\phi^4 H(a')} \tilde{\Theta}\qty(\frac{m_\phi}{2} \frac{a_\ini}{a} \le \rmp_\varphi \le \frac{m_\phi}{2})]_{a' = 2 \rmp_\varphi a / m_\phi} - 1,
+    \label{eq:f_reheaton}
+\end{equation}
+where $n_\phi(a)$ is the number density of the inflaton that obeys
+\begin{equation}
+    \dv{a} \qty(n_\phi a^3) = -\frac{\lambda^2}{32 \pi m_\phi a H(a)} \exp[\frac{\pi \lambda^2}{m_\phi^4 a^3 H(a)} \qty(n_\phi a^3)] \qty(n_\phi a^3).
+\end{equation}
+According to the exponential factor, the value of $n_\phi a^3 / a_\ini^3$ before inflaton decay is evaluated by
+\begin{equation}
+    n_\phi(a) \times \qty(\frac{a}{a_\ini})^3 \simeq \left\{
+        \begin{aligned}
+            & \frac{3 \MPl^2 H_\ini^2}{m_\phi} & \qfor \lambda \le \lambda_\mathrm{c}, \\
+            & \frac{m_\phi^4 H_\ini}{\pi \lambda^2} \ln\frac{32 \pi m_\phi H_\ini}{\lambda^2} & \qfor \lambda \ge \lambda_\mathrm{c}
+        \end{aligned}
+    \right.
+\end{equation}
+with
+\begin{equation}
+    \lambda_\mathrm{c} \equiv \frac{m_\phi^5}{3 \pi \MPl^2 H_\ini} \mathcal{W}\qty[\frac{96 \pi^2 \MPl^2 H_\ini^2}{m_\phi^4}],
+\end{equation}
+where $\mathcal{W}(x)$ is the Lambert function that satisfies $\mathcal{W}(x) e^{\mathcal{W}(x)} = x$.
+For simplicity, the evolution of $n_\phi a^3$ can be approximated by
+\begin{equation}
+    \begin{aligned}
+        n_\phi(a) \times \qty(\frac{a}{a_\ini})^3 & \simeq \min\qty(\frac{3 \MPl^2 H_\ini^2}{m_\phi}, \frac{m_\phi^4 H_\ini}{\pi \lambda^2} \ln\frac{32 \pi m_\phi H_\ini}{\lambda^2}) \exp[-\Gamma_{\phi \to \varphi \varphi} (t - t_\ini)] \\
+        & \simeq n_\phi'^{(\ini)} \exp[-\frac{C_H \lambda^2}{32 \pi m_\phi H(a)}],
+    \end{aligned}
+\end{equation}
+where we have applied $t - t_\ini \simeq t$ for $t \gg t_\ini$ and $H = C_H / t$ with $C_H = 2/3$ for the matter-dominated (MD) era or $C_H = 1/2$ during the radiation-dominated (RD) era.
+And we have defined that
+\begin{equation}
+    n_\phi'^{(\ini)} \equiv \min\qty(\frac{3 \MPl^2 H_\ini^2}{m_\phi}, \frac{m_\phi^4 H_\ini}{\pi \lambda^2} \ln\frac{32 \pi m_\phi H_\ini}{\lambda^2}).
+\end{equation}
+If the evolution history of the Universe is purely MD or RD, the Hubble parameter can be simply written as
+\begin{equation}
+    H(a) = H_\ini \qty(\frac{a_\ini}{a})^{C_H^{-1}}.
+\end{equation}
+Therefore,
+\begin{equation}
+    \begin{aligned}
+        f_\varphi(a, \rmp_\varphi) & \simeq \exp{\frac{\pi \lambda^2 n_\phi'^{(\ini)}}{m_\phi^4 H_\ini} \qty(\frac{a_\ini}{a'})^{3 - C_H^{-1}} \exp[-\frac{C_H \lambda^2}{32 \pi m_\phi H_\ini} \qty(\frac{a'}{a_\ini})^{C_H^{-1}}] \tilde{\Theta}\qty(a_\ini \le a' \le a)}_{a' = 2 \rmp_\varphi a / m_\phi} - 1 \\
+        & =  \exp{\frac{\pi \lambda^2 n_\phi'^{(\ini)}}{m_\phi^4 H_\ini} \qty(\frac{m_\phi a_\ini}{2 \rmp_\varphi a})^{3 - C_H^{-1}} \exp[-\frac{C_H \lambda^2}{32 \pi m_\phi H_\ini} \qty(\frac{2 \rmp_\varphi a}{m_\phi a_\ini})^{C_H^{-1}}] \tilde{\Theta}\qty(\frac{m_\phi}{2} \frac{a_\ini}{a} \le \rmp_\varphi \le \frac{m_\phi}{2})} - 1.
+    \end{aligned}
+\end{equation}
+
+\section{Calculations}
+
+First of all, we insert two identities of
+\begin{align}
+    1 & \equiv \int \frac{\dd[4]{q}}{\twopi[4]} \twopidelta[4]{q - p_1 - p_2}, \\
+    1 & \equiv \int \frac{\dd{s}}{\twopi} \twopidelta{s + q^2}
+\end{align}
+into the integration of $\CT[f_h][\varphi \varphi \to h h]$ to obtain
+\begin{equation}
+    \begin{aligned}
+        & & & \CT[f_h][\varphi \varphi \to h h] \\
+        & = & & \frac{1}{4 E_1^{(h)}} \int \frac{\dd{s}}{\twopi} \twopidelta{s + q^2} \int \frac{\dd[4]{q}}{\twopi[3]} \twopidelta[4]{q - p_1 - p_2} \int \tildedp{p_1} ~ \tildedp{p_2} ~ \tildedp{k_2} ~ \twopidelta[4]{q - k_1 - k_2} \\
+        & & & \qquad {} \times \sumAmpNormSqr{\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)} f_\varphi(p_1) f_\varphi(p_2) \\
+        & = & & \frac{1}{4 E_1^{(h)}} \int_0^\infty \frac{\dd{s}}{\twopi} \int \tildedp{q} \int \tildedp{p_1} ~ \tildedp{p_2} ~ \twopidelta[4]{q - p_1 - p_2} f_\varphi(p_1) f_\varphi(p_2) \\
+        & & & \qquad {} \times \int \tildedp{k_2} ~ \twopidelta[4]{q - k_1 - k_2} \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2}. \\
+    \end{aligned}
+\end{equation}
+Since $m_h = 0$, we have $E_1^{(h)} = \rmk_1$, and
+\begin{equation}
+    s = 2 \rmp_1 \rmp_2 \qty(1 - \cos \expval{\vb{p}_1, \vb{p}_2}) = 2 \rmk_1 \rmk_2 \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2}),
+\end{equation}
+which leads to
+\begin{equation}
+    \begin{aligned}
+        & & & \frac{1}{4 \rmk_1} \int_0^\infty \frac{\dd{s}}{\twopi} \int \tildedp{q} \int \tildedp{k_2} ~ \twopidelta[4]{q - k_1 - k_2} \\
+        & = & & \frac{1}{4 \rmk_1} \int_0^\infty \frac{\dd{s}}{\twopi} \int \tildedp{q} ~ \frac{1}{2 \rmk_2} \twopidelta{\sqrt{\rmq^2 + s} - \rmk_1 - \rmk_2} \\
+        & = & & \frac{1}{4 \rmk_1} \int_0^\infty \frac{\dd{s}}{\twopi} \int \frac{\dd[3]{\vb{q}}}{\twopi[3] 2 \sqrt{\rmq^2 + s}} \frac{\rmk_1 \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2})}{s} \\
+        & & & \qquad {} \times \twopidelta{\sqrt{\rmq^2 + s} - \rmk_1 - \frac{s}{2 \rmk_1 \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2})}} \\
+        & = & & \frac{1}{4} \int_0^\infty \frac{\dd{s}}{\twopi s} \int_{-1}^{+1} \dd{\cos \expval{\vb{q}, \vb{k}_1}} \int_0^\infty \frac{\rmq^2 \dd{\rmq}}{\twopi[2] 2 \sqrt{\rmq^2 + s}} \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2}) \\
+        & & & \qquad {} \times \twopidelta{\sqrt{\rmq^2 + s} - \rmk_1 - \frac{s}{2 \rmk_1 \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2})}}.
+    \end{aligned}
+\end{equation}
+Noticing $\vb{q} = \vb{k}_1 + \vb{k}_2$, we have
+\begin{equation}
+    \begin{aligned}
+        \vb{q} \cdot \vb{k}_1 & = \vb{k}_1^2 + \vb{k}_1 \cdot \vb{k}_2 \\
+        \rmq \rmk_1 \cos \expval{\vb{q}, \vb{k}_1} & = \rmk_1^2 + \rmk_1 \rmk_2 \cos \expval{\vb{k}_1, \vb{k}_2} \\
+        & = \rmk_1^2 + \frac{s \cos \expval{\vb{k}_1, \vb{k}_2}}{2 (1 - \cos \expval{\vb{k}_1, \vb{k}_2})},
+    \end{aligned}
+\end{equation}
+where we have applied
+\begin{equation*}
+    \rmk_2 = \frac{s}{2 \rmk_1 (1 - \cos \expval{\vb{k}_1, \vb{k}_2})}.
+\end{equation*}
+Therefore,
+\begin{equation}
+    \begin{aligned}
+        & & & \frac{1}{4} \int_0^\infty \frac{\dd{s}}{\twopi s} \int_{-1}^{+1} \dd{\cos \expval{\vb{q}, \vb{k}_1}} \int_0^\infty \frac{\rmq^2 \dd{\rmq}}{\twopi[2] 2 \sqrt{\rmq^2 + s}} \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2}) \\
+        & & & \qquad {} \times \twopidelta{\sqrt{\rmq^2 + s} - \rmk_1 - \frac{s}{2 \rmk_1 \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2})}} \\
+        & = & & \frac{1}{4} \int_0^\infty \frac{\dd{s}}{\twopi s} \int_0^\infty \frac{\rmq^2 \dd{\rmq}}{\twopi[2] 2 \sqrt{\rmq^2 + s}} \int_{-1}^{+1} \dd{\cos \expval{\vb{q}, \vb{k}_1}} \frac{s}{s - 2 \rmk_1 \qty(\rmk_1 - q \cos \expval{\vb{q}, \vb{k}_1})} \\
+        & & & \qquad {} \times \twopidelta{\sqrt{\rmq^2 + s} - \frac{s}{2 \rmk_1} - \rmq \cos \expval{\vb{q}, \vb{k}_1}} \\
+        & = & & \frac{1}{4} \int_0^\infty \frac{\dd{s}}{\twopi s} \int_0^\infty \frac{\rmq^2 \dd{\rmq}}{\twopi[2] 2 \sqrt{\rmq^2 + s}} \frac{\twopi s}{2 \rmq \rmk_1 \qty(\sqrt{\rmq^2 + s} - \rmk_1)} \tilde{\Theta}\qty(q \ge \frac{\abs{s - 4 \rmk_1^2}}{4 \rmk_1}) \\
+        & = & & \frac{1}{16 \twopi[2] \rmk_1} \int_0^\infty \dd{s} \int_{\abs{s - 4 \rmk_1^2} / (4 \rmk_1)}^\infty \frac{\rmq \dd{\rmq}}{\rmq^2 + s - \rmk_1 \sqrt{\rmq^2 + s}} \\
+        & = & & \frac{1}{16 \twopi[2] \rmk_1} \int_0^\infty \dd{s} \int_{\rmk_1 + s / (4 \rmk_1)}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \\
+        & = & & \frac{1}{16 \twopi[2] \rmk_1} \int_{\rmk_1}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \int_0^{4 \rmk_1 (E_q - \rmk_1)} \dd{s},
+    \end{aligned}
+\end{equation}
+where we have applied $E_q = \sqrt{\rmq^2 + s}$.
+Taking it back into the integration of $\CT[f_h][\varphi \varphi \to h h]$, we have
+\begin{equation}
+    \begin{aligned}
+        & & & \CT[f_h][\varphi \varphi \to h h] \\
+        & = & & \frac{1}{16 \twopi[2] \rmk_1} \int_{\rmk_1}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \int_0^{4 \rmk_1 (E_q - \rmk_1)} \dd{s} \\
+        & & & \qquad {} \times \int \tildedp{p_1} ~ \tildedp{p_2} ~ \twopidelta[4]{q - p_1 - p_2} f_\varphi(p_1) f_\varphi(p_2) \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2}. \\
+    \end{aligned}
+\end{equation}
+Then, we can continue to calculate the integration over $p_1$ and $p_2$ as
+\begin{equation}
+    \begin{aligned}
+        \int \tildedp{p_1} ~ \tildedp{p_2} ~ \twopidelta[4]{q - p_1 - p_2} & = & & \int \frac{\tildedp{p_1}}{2 E_2^{(\varphi)}} \twopidelta{E_q - E_1^{(\varphi)} - E_2^{(\varphi)}} \\
+        & = & & \int \frac{\tildedp{p_1}}{2 \rmp_2} \twopidelta{E_q - \rmp_1 - \rmp_2} \\
+        & = & & \int_0^\infty \frac{\rmp_1 \dd{\rmp_1}}{\twopi[3] 4 \rmp_2} \int_{-1}^{+1} \cos \expval{\vb{q}, \vb{p}_1} \int_{0}^{2 \pi} \dd{\varphi} \\
+        & & & \qquad {} \times \twopidelta{E_q - \rmp_1 - \sqrt{\rmq^2 + \rmp_1^2 - 2 \rmq \rmp_1 \cos \expval{\vb{q}, \vb{p}_1}}} \\
+        & = & & \frac{1}{4 \twopi[2]} \int_{0}^{2 \pi} \dd{\varphi} \int_0^\infty \frac{\rmp_1 \dd{\rmp_1}}{\rmp_2} \frac{\rmp_2}{\rmq \rmp_1} \tilde{\Theta}\qty(\abs{\rmp_1 - \frac{E_q}{2}} \le \frac{\rmq}{2}) \\
+        & = & & \frac{1}{4 \twopi[2] \rmq} \int_{0}^{2 \pi} \dd{\varphi} \int_{(E_q - \rmq) / 2}^{(E_q + \rmq) / 2} \dd{\rmp_1},
+    \end{aligned}
+\end{equation}
+where the azimuthal angle $\varphi$ is not integrated out since the integrand depends on it, and we will return to it later.
+Therefore,
+\begin{equation}
+    \begin{aligned}
+        & & & \CT[f_h][\varphi \varphi \to h h] \\
+        & = & & \frac{1}{64 \twopi[4] \rmk_1} \int_{\rmk_1}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \int_0^{4 \rmk_1 (E_q - \rmk_1)} \frac{\dd{s}}{\rmq} \int_{(E_q - \rmq) / 2}^{(E_q + \rmq) / 2} \dd{\rmp_1} f_\varphi(\rmp_1) f_\varphi\qty(E_q - \rmp_1) \\
+        & & & \qquad {} \times \int_{0}^{2 \pi} \dd{\varphi} \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2} \\
+        & = & & \frac{1}{64 \twopi[4] \rmk_1} \int_{\rmk_1}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \int_0^{E_q} \dd{\rmp_1} f_\varphi(\rmp_1) f_\varphi\qty(E_q - \rmp_1) \int_0^{s_{\max}} \frac{\dd{s}}{\rmq} \\
+        & & & \qquad {} \times \int_{0}^{2 \pi} \dd{\varphi} \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2},
+    \end{aligned}
+    \label{eq:CT-f_h-analytical}
+\end{equation}
+where the Mandelstam variable $t$ is evaluated as
+\begin{equation}
+    \begin{aligned}
+        t \coloneq & -\qty(p_1 - k_1)^2 \\
+        = & -2 \rmp_1 \rmk_1 \qty(1 - \cos \expval{\vb{p}_1, \vb{k}_1})
+    \end{aligned}
+\end{equation}
+and
+\begin{equation}
+    s_{\max} = 4 \min\qty[\rmk_1 (E_q - \rmk_1), \rmp_1 \qty(E_q - \rmp_1)].
+\end{equation}
+With spherical law of cosines, we have
+\begin{equation}
+    \begin{aligned}
+        \cos \expval{\vb{p}_1, \vb{k}_1} & = \cos \expval{\vb{q}, \vb{p}_1} \cos \expval{\vb{q}, \vb{k}_1} + \sin \expval{\vb{q}, \vb{p}_1} \sin \expval{\vb{q}, \vb{k}_1} \cos \varphi \\
+        & = \cos \expval{\vb{q}, \vb{p}_1} \cos \expval{\vb{q}, \vb{k}_1} + \sqrt{\qty(1 - \cos^2 \expval{\vb{q}, \vb{p}_1}) \qty(1 - \cos^2 \expval{\vb{q}, \vb{k}_1})} \cos \varphi,
+    \end{aligned}
+\end{equation}
+where $\varphi$ is the azimuthal angle between the planes of $(\vb{q}, \vb{p}_1)$ and $(\vb{q}, \vb{k}_1)$.
+Notice that $\expval{\vb{q}, \vb{k}_1}$ and $\expval{\vb{q}, \vb{p}_1}$ are in the range of $[0, \pi]$, so
+\begin{equation*}
+    \sin \expval{\vb{q}, \vb{k}_1} = +\sqrt{1 - \cos^2 \expval{\vb{q}, \vb{k}_1}} \qand \sin \expval{\vb{q}, \vb{p}_1} = + \sqrt{1 - \cos^2 \expval{\vb{q}, \vb{p}_1}}
+\end{equation*}
+are applied.
+There are two cosine terms that have been derived before, and we present them here explicitly as
+\begin{align}
+    \cos \expval{\vb{q}, \vb{k}_1} & = \frac{2 \rmk_1 E_q - s}{2 \rmk_1 \rmq }, \\
+    \cos \expval{\vb{q}, \vb{p}_1} & = \frac{2 \rmp_1 E_q - s}{2 \rmp_1 \rmq}.
+\end{align}
+To evaluate the integration over $\varphi$, we first consider the integration over $t \equiv A + B \cos \varphi$ as
+\begin{equation}
+    \int_0^{2 \pi} \dd{\varphi} \frac{2 t^2 (s + t)^2}{\MPl^4 s^2} = \frac{\pi}{2 \MPl^4 s^2} \qty[8 A^4 + 3 B^4 + 24 A^2 B^2 + 8 s A (2 A^2 + 3 B^2) + 4 s^2 (2 A^2 + B^2)].
+\end{equation}
+Finally, we identify that
+\begin{align}
+    A & \equiv -2 \rmp_1 \rmk_1 \qty(1 - \cos \expval{\vb{q}, \vb{p}_1} \cos \expval{\vb{q}, \vb{k}_1}), \\
+    B & \equiv 2 \rmp_1 \rmk_1 \sqrt{\qty(1 - \cos^2 \expval{\vb{q}, \vb{p}_1}) \qty(1 - \cos^2 \expval{\vb{q}, \vb{k}_1})},
+\end{align}
+and the corresponding integral is obtained.
+Notice that the integration over $\dd{s}$ can also be performed analytically, but the result is too lengthy to be presented here.
+
+To solve the Boltzmann equation shown in Eq.~\eqref{eq:BTE-for-f_h}, we can consider the change of variables as
+\begin{equation}
+    \begin{aligned}
+        t & \to a(t), \\
+        p_h & \to \tilde{p}_h \equiv p_h a(t),
+    \end{aligned}
+\end{equation}
+The Boltzmann equation now becomes
+\begin{equation}
+    H a \pdv{\tilde{f}_h}{a}\qty(a, \tilde{p}_h) = \CT[f_h][][a, \tilde{p}_h],
+\end{equation}
+whose solution is simply
+\begin{equation}
+    \tilde{f}_h\qty(a, \tilde{p}_h) = \int_{a_\ini}^{a} \frac{\dd{\alpha}}{H(\alpha) \alpha} \CT[f_h][][\alpha, \tilde{p}_h].
+\end{equation}
+Applying the collision term of Eq.~\eqref{eq:CT-f_h-analytical}, we have
+\begin{equation}
+    \begin{aligned}
+        \tilde{f}_h\qty(a, \tilde{k}_1) & = & & \int_{a_\ini}^{a} \frac{\dd{\alpha}}{H(\alpha) \alpha} \frac{1}{64 \twopi[4] \rmk_1} \int_{\rmk_1}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \int_0^{E_q} \dd{\rmp_1} f_\varphi(\rmp_1) f_\varphi\qty(E_q - \rmp_1) \\
+        & & & \qquad {} \times \int_0^{s_{\max}} \frac{\dd{s}}{\rmq} \int_{0}^{2 \pi} \dd{\varphi} \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2} \\
+        & = & & \frac{1}{64 \twopi[4]} \int_{a_\ini}^{a} \frac{\dd{\alpha}}{H(\alpha) \tilde{\rmk}_1} \int_{\tilde{\rmk}_1}^\infty \frac{\dd{\tilde{E}_q}}{\tilde{E}_q - \tilde{\rmk}_1} \int_0^{\tilde{E}_q} \frac{\dd{\tilde{\rmp}_1}}{\alpha} \tilde{f}_\varphi(\alpha, \tilde{\rmp}_1) \tilde{f}_\varphi\qty(\alpha, \tilde{E}_q - \tilde{\rmp}_1) \\
+        & & & \qquad {} \times \int_0^{\tilde{s}_{\max}} \frac{\dd{\tilde{s}}}{\tilde{\rmq} \alpha} \int_{0}^{2 \pi} \dd{\varphi} \frac{2 \tilde{t}^2 \qty(\tilde{s} + \tilde{t})^2}{\MPl^4 \tilde{s}^2 \alpha^4}
+    \end{aligned}
+\end{equation}
+with
+\begin{equation}
+    \tilde{s}_{\max} = 4 \min\qty[\tilde{\rmk}_1 (\tilde{E}_q - \tilde{\rmk}_1), \tilde{\rmp}_1 (\tilde{E}_q - \tilde{\rmp}_1)],
+\end{equation}
+where we have also defined that $\tilde{\rmk}_1 \equiv \rmk_1 a$, $\tilde{E}_q \equiv E_q a$, $\tilde{\rmp}_1 \equiv \rmp_1 a$, $\tilde{s} \equiv s a^2$, $\tilde{\rmq} \equiv \rmq a$, and $\tilde{t} \equiv t a^2$ ($a \to \alpha$ in the integrand).
+Here, the phase space distribution of the reheaton $\varphi$ in the comoving momentum is given by
+\begin{equation}
+    \tilde{f}_\varphi\qty(\alpha, \tilde{\rmp}_\varphi) = \exp[\frac{\pi \lambda^2 n_\phi(\alpha')}{m_\phi^4 H(\alpha')} \tilde{\Theta}\qty(\frac{m_\phi a_\ini}{2} \le \tilde{\rmp}_\varphi \le \frac{m_\phi \alpha}{2})]_{\alpha' = 2 \tilde{\rmp}_\varphi / m_\phi} - 1,
+\end{equation}
+which requires that
+\begin{equation}
+    \frac{m_\phi a_\ini}{2} \le \tilde{\rmp}_1 \le \frac{m_\phi \alpha}{2} \qand \frac{m_\phi a_\ini}{2} \le \tilde{E}_q - \tilde{\rmp}_1 \le \frac{m_\phi \alpha}{2}
+\end{equation}
+for the non-vanishing product of $\tilde{f}_\varphi(\alpha, \tilde{\rmp}_1) \tilde{f}_\varphi(\alpha, \tilde{E}_q - \tilde{\rmp}_1)$.
+Summing them up, we have then
+\begin{equation}
+    m_\phi a_\ini \le \tilde{E}_q \le m_\phi \alpha,
+\end{equation}
+which also requires $\tilde{\rmk}_1 \le m_\phi \alpha \le m_\phi a$ since $\tilde{\rmk}_1 \le \tilde{E}_q$, \ie,
+\begin{equation}
+    \max\qty(a_\ini, \frac{\tilde{k}_1}{m_\phi}) \le \alpha \le a.
+\end{equation}
+Furthermore, the non-vanishing product of $\tilde{f}_\varphi(\alpha, \tilde{\rmp}_1) \tilde{f}_\varphi(\alpha, \tilde{E}_q - \tilde{\rmp}_1)$ also requires
+\begin{equation}
+    \abs{\tilde{\rmp}_1 - \frac{\tilde{E_q}}{2}} \le \frac{1}{2} \min\qty(m_\phi \alpha - \tilde{E}_q, \tilde{E}_q - m_\phi a_\ini).
+\end{equation}
+Hence, the integration ranges of $\tilde{\rmk}_1$, $\tilde{\rmq}$ and $\tilde{\rmp}_1$ are constrained, \ie,
+\begin{equation}
+    \begin{aligned}
+        \tilde{f}_h\qty(a, \tilde{\rmk}_1) & = & & \frac{1}{64 \twopi[4] \tilde{\rmk}_1} \tilde{\Theta}\qty(0 \le \tilde{\rmk}_1 \le m_\phi a) \int_{\max\qty(a_\ini, \tilde{k}_1 / m_\phi)}^{a} \frac{\dd{\alpha}}{H(\alpha) \alpha^6} \\
+        & & & \qquad {} \times \int_{\max\qty(\tilde{\rmk}_1, m_\phi a_\ini)}^{m_\phi \alpha} \frac{\dd{\tilde{E}_q}}{\tilde{E}_q - \tilde{\rmk}_1} \int_{\tilde{\rmp}_1^{(-)}}^{\tilde{\rmp}_1^{(+)}} \dd{\tilde{\rmp}_1} \tilde{f}_\varphi(\alpha, \tilde{\rmp}_1) \tilde{f}_\varphi\qty(\alpha, \tilde{E}_q - \tilde{\rmp}_1) \\
+        & & & \qquad {} \times \int_0^{\tilde{s}_{\max}} \frac{\dd{\tilde{s}}}{\tilde{\rmq}} \int_{0}^{2 \pi} \dd{\varphi} \frac{2 \tilde{t}^2 \qty(\tilde{s} + \tilde{t})^2}{\MPl^4 \tilde{s}^2},
+    \end{aligned}
+\end{equation}
+where
+\begin{equation}
+    \tilde{\rmp}_1^{(\pm)} = \frac{1}{2} \qty[\tilde{E}_q \pm \min\qty(m_\phi \alpha - \tilde{E}_q, \tilde{E}_q - m_\phi a_\ini)].
+\end{equation}
+
+\section{Numerical Results}
+
+With $m_\phi = \tento{13} ~ \GeV$ and $\lambda = \tento{7} ~ \GeV$, we present the numerical results of $f_h(a, E_h)$ for $a / a_\ini = 10^6, 10^8, 10^{10}$ in Fig.~1.
+In this case, one can see that the peak of $\tilde{f}_h\qty(a, \tilde{\rmk}_h)$ is around $\tilde{\rmk}_h \simeq m_\phi a_\ini / 2$, which may arise from the fact that $\tilde{f}_\varphi\qty(\alpha, \tilde{\rmp}_\varphi)$ peaks at $\tilde{\rmp}_\varphi \simeq m_\phi a_\ini / 2$ with an exponentially decreasing tail for $\tilde{\rmp}_\varphi > m_\phi a_\ini / 2$.
+Therefore, we can consider to make an approximation to the numerical integration.
+
+\begin{figure}
+    \centering
+    \includegraphics{code/plots/f_h_m1e13GeV_lambda1e7.pdf}
+    \caption{$f_h(a, E_h)$ for $a / a_\ini = 10^6, 10^8, 10^{10}$ with $m_\phi = 10^{13} ~ \GeV$, $\lambda = 10^7 ~ \GeV$, respectively.}
+\end{figure}
+
+First, let us calculate the peak of 
+
+\clearpage
+\appendix\section*{Appendix}\addcontentsline{toc}{section}{Appendix}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+\section{\texorpdfstring{\TBD}{TBD.}}
+\TBA
+
+\printbibliography[heading=bibintoc]
+
+\end{document}

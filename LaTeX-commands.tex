@@ -1,0 +1,11 @@
+\newcommand{\email}[1]{\footnote{E-mail: \href{mailto:#1}{#1}}}
+\newcommand{\eg}{\textit{e.g.}}
+\newcommand{\etc}{\textit{etc.}}
+\newcommand{\ie}{\textit{i.e.}}
+\newcommand{\license}{\footnote{This note © 2025 by \href{https://github.com/Fenyutanchan}{Quan-feng WU} is licensed under \href{https://creativecommons.org/licenses/by-nc-/4.0/}{CC BY-NC-ND 4.0}. \faCreativeCommons \faCreativeCommonsBy \faCreativeCommonsNc \faCreativeCommonsNd}}
+
+\DeclareDocumentCommand{\TBA}{o}{{\color{red} TBA\IfNoValueTF{#1}{.}{: #1}}}
+\DeclareDocumentCommand{\TBD}{o}{{\color{red} TBD\IfNoValueTF{#1}{.}{: #1}}}
+
+\newcommand{\wqf}[1]{{\color{teal} [WQF: #1]}}
+\newcommand{\notsure}[1]{{\color{green!60!black!100!} #1}}

@@ -13,4 +13,5 @@
 *tmp*
 
 Manifest.toml
-main.pdf
+
+note-*.pdf

@@ -71,6 +71,23 @@ The Boltzmann transport equation (BTE) for $f(t, \rmp)$ reads
 \end{equation}
 where $H$ is the Hubble parameter and $\CT[f]$ is the collision term for $f$.
 
+The gravitational wave spectrum is defined by
+\begin{equation}
+    \Omega_\GW^{(0)}\qty(\frakf_h) \coloneq \frac{1}{\rho_c^{(0)}} \dv{\rho_\GW^{(0)}}{\ln \frakf},
+\end{equation}
+where $\rho_c^{(0)} \equiv 3 H_0^2 / (8 \pi \GN) = 8.53285(2) \timestento{-30} ~ \gram ~ \cm^{-3}$ is the critical energy density of the Universe at present (the subscript ``0" and the superscript ``(0)" denote the quantities at present) and $\frakf_h \equiv \rmk_h / (\twopi)$ is the frequency of gravitational waves.
+Noticing that
+\begin{equation}
+    \begin{aligned}
+        \rho_\GW^{(0)} & = g_h \int \frac{\dd[3]{\vb{k}_h}}{\twopi[3]} E_h f_h(t_0, \rmk_h) \\
+        & = \int_0^\infty \frac{\rmk_h^3 \dd{\rmk_h}}{\pi^2} f_h(t_0, \rmk_h),
+    \end{aligned}
+\end{equation}
+where $g_h = 2$ and $E_h = \rmk_h$, we have the energy spectrum of gravitational waves at present as
+\begin{equation}
+    \frac{1}{\rho_c^{(0)}} \dv{\rho_\GW^{(0)}}{\ln \frakf_h} = \frac{\frakf_h}{\rho_c^{(0)}} \dv{\rho_\GW^{(0)}}{\frakf_h} = \frac{\rmk_h}{\rho_c^{(0)}} \dv{\rho_\GW^{(0)}}{\rmk_h} = \frac{\rmk_h^4}{\pi^2 \rho_c^{(0)}} f_h(t_0, \rmk_h) = 16 \pi^2 \frac{\frakf_h^4}{\rho_c^{(0)}} f_h(t_0, \twopi \frakf_h).
+\end{equation}
+
 \section{Background Evolutions}
 
 Intially, we consider the Universe is filled with only $\phi$ particles whose initial distribution is given by
@@ -81,7 +98,7 @@ Intially, we consider the Universe is filled with only $\phi$ particles whose in
 where $0^+$ is an infinitesimal to regularize the behavior of $f_\phi$ at $\rmp_\phi \to 0^+$.
 It is easy to verify that
 \begin{equation}
-    \int \frac{\dd[3]{\vb{p}_\phi}}{\twopi[3]} f_\phi\qty(t_\ini, \rlsmp_\phi) = \int_0^\infty \frac{\rmp_\phi^2 \dd{\rmp_\phi}}{2 \pi^2} \frac{2 \pi^2}{\rmp_\phi^2} \delta\qty(\rmp_\phi - 0^+) = n_\phi^\upini.
+    \int \frac{\dd[3]{\vb{p}_\phi}}{\twopi[3]} f_\phi\qty(t_\ini, \rmp_\phi) = \int_0^\infty \frac{\rmp_\phi^2 \dd{\rmp_\phi}}{2 \pi^2} \frac{2 \pi^2}{\rmp_\phi^2} \delta\qty(\rmp_\phi - 0^+) = n_\phi^\upini.
 \end{equation}
 Then, the reheating process is triggered by the decay of $\phi$ into $\varphi$ particles.
 

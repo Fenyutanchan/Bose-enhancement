@@ -58,7 +58,7 @@
 \newcommand{\sumAmpNormSqr}[1]{\sum\ampNormSqr{#1}}
 \newcommand{\avgAmpNormSqr}[1]{\overline{\ampNormSqr{#1}}}
 
-\DeclareDocumentCommand{\CT}{ooo}{\calC\IfNoValueF{#2}{_{#2}}\IfNoValueF{#1}{\qty[#1]}\IfNoValueF{#3}{\qty(#3)}}
+\DeclareDocumentCommand{\CT}{oooo}{\calC\IfNoValueF{#2}{_{#2}}\IfNoValueF{#4}{^{#4}}\IfNoValueF{#1}{\qty[#1]}\IfNoValueF{#3}{\qty(#3)}}
 \DeclareDocumentCommand{\Lagrangian}{oo}{\mathcal{L}\IfNoValueF{#1}{_{#1}}\IfNoValueF{#2}{\qty[#2]}}
 
 \newcommand{\GW}{\mathrm{GW}}

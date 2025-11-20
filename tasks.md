@@ -1,5 +1,5 @@
 # Task Dashboard
 
-- [x] Check rates calculation in `main-fix-H.ipynb` for correctness and consistency.
+- [ ] Analytically evaluate the $n_\phi$ evolution with $\phi \to \varphi \varphi h$ decay.
 - [ ] Check formulae for $\mathcal{C}[f_h]$ in `note-inflaton-three-body-decay.tex`.
 - [ ] GW spectra calculation.

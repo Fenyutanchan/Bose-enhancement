@@ -58,7 +58,10 @@
 \newcommand{\avgAmpNormSqr}[1]{\overline{\ampNormSqr{#1}}}
 
 \DeclareDocumentCommand{\CT}{ooo}{\calC\IfNoValueF{#2}{_{#2}}\IfNoValueF{#1}{\qty[#1]}\IfNoValueF{#3}{\qty(#3)}}
+\DeclareDocumentCommand{\Lagrangian}{oo}{\mathcal{L}\IfNoValueF{#1}{_{#1}}\IfNoValueF{#2}{\qty[#2]}}
 
 \newcommand{\eff}{\mathrm{eff}}
 \newcommand{\ini}{\mathrm{ini}}
 \newcommand{\fin}{\mathrm{fin}}
+
+\newcommand{\upini}{{(\ini)}}

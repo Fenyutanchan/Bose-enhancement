@@ -14,7 +14,7 @@
     \addbibresource{others.bib}
 \usepackage[inline]{enumitem}
 \usepackage{fontawesome5}
-\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage[a4paper, margin=1.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage[
     colorlinks=true,
@@ -63,21 +63,7 @@ We are now consider the Boltzmann equation for gravitons as
     \pdv{f_h}{t} - H \rmp_h \pdv{f_H}{\rmp_h} = \CT[f_h].
     \label{eq:BTE-for-f_h}
 \end{equation}
-For the process $\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)$, the collision term is given by
-\begin{equation}
-    \begin{aligned}
-        \CT[f_h][\varphi \varphi \to h h] & = & & \frac{1}{2 E_1^{(h)}} \int \tildedp{p_1} ~ \tildedp{p_2} ~ \tildedp{k_2} ~ \twopidelta[4]{p_1 + p_2 - k_1 - k_2} \\
-        & & & \qquad {} \times \frac{S_\mathrm{R}^{(h)}}{S_\mathrm{L} S_\mathrm{R}} \sumAmpNormSqr{\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)} f_\varphi(p_1) f_\varphi(p_2) \\
-        & = & & \frac{1}{4 E_1^{(h)}} \int \tildedp{p_1} ~ \tildedp{p_2} ~ \tildedp{k_2} ~ \twopidelta[4]{p_1 + p_2 - k_1 - k_2} \\
-        & & & \qquad {} \times \sumAmpNormSqr{\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)} f_\varphi(p_1) f_\varphi(p_2),
-    \end{aligned}
-\end{equation}
-where we have applied $S_\mathrm{L} = 2!$ and $S_\mathrm{R} = S_\mathrm{R}^{(h)} = 2!$ for the identical particles in the left and right sides of the reaction, respectively.
-The corresponding norm squared of amplitude that summed over the left- and right-hand side degrees of freedom is given by \cite[Eq.~(A.19)]{Bernal:2025lxp}
-\begin{equation}
-    \sumAmpNormSqr{\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)} = \frac{2 t^2 u^2}{\MPl^4 s^2} = \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2},
-\end{equation}
-where we have applied that $s + t + u = 0$ for all the external particles being massless.
+where $\CT[f_h]$ is the corresponding collision term and $H$ is the Hubble parameter.
 
 The phase space distribution of the reheaton $\varphi$ is given by
 \begin{equation}
@@ -126,7 +112,23 @@ Therefore,
     \end{aligned}
 \end{equation}
 
-\section{Calculations}
+\section{\boldmath \texorpdfstring{$\varphi + \varphi \to h + h$}{varphi + varphi -> h + h}}
+
+For the process $\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)$, the collision term is given by
+\begin{equation}
+    \begin{aligned}
+        \CT[f_h][\varphi \varphi \to h h] & = & & \frac{1}{2 E_1^{(h)}} \int \tildedp{p_1} ~ \tildedp{p_2} ~ \tildedp{k_2} ~ \twopidelta[4]{p_1 + p_2 - k_1 - k_2} \\
+        & & & \qquad {} \times \frac{S_\mathrm{R}^{(h)}}{S_\mathrm{L} S_\mathrm{R}} \sumAmpNormSqr{\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)} f_\varphi(p_1) f_\varphi(p_2) \\
+        & = & & \frac{1}{4 E_1^{(h)}} \int \tildedp{p_1} ~ \tildedp{p_2} ~ \tildedp{k_2} ~ \twopidelta[4]{p_1 + p_2 - k_1 - k_2} \\
+        & & & \qquad {} \times \sumAmpNormSqr{\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)} f_\varphi(p_1) f_\varphi(p_2),
+    \end{aligned}
+\end{equation}
+where we have applied $S_\mathrm{L} = 2!$ and $S_\mathrm{R} = S_\mathrm{R}^{(h)} = 2!$ for the identical particles in the left and right sides of the reaction, respectively.
+The corresponding norm squared of amplitude that summed over the left- and right-hand side degrees of freedom is given by \cite[Eq.~(A.19)]{Bernal:2025lxp}
+\begin{equation}
+    \sumAmpNormSqr{\varphi(p_1) + \varphi(p_2) \to h(k_1) + h(k_2)} = \frac{2 t^2 u^2}{\MPl^4 s^2} = \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2},
+\end{equation}
+where we have applied that $s + t + u = 0$ for all the external particles being massless.
 
 First of all, we insert two identities of
 \begin{align}
@@ -143,52 +145,22 @@ into the integration of $\CT[f_h][\varphi \varphi \to h h]$ to obtain
         & & & \qquad {} \times \int \tildedp{k_2} ~ \twopidelta[4]{q - k_1 - k_2} \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2}. \\
     \end{aligned}
 \end{equation}
-Since $m_h = 0$, we have $E_1^{(h)} = \rmk_1$, and
-\begin{equation}
-    s = 2 \rmp_1 \rmp_2 \qty(1 - \cos \expval{\vb{p}_1, \vb{p}_2}) = 2 \rmk_1 \rmk_2 \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2}),
-\end{equation}
-which leads to
+First, we have
 \begin{equation}
     \begin{aligned}
-        & & & \frac{1}{4 \rmk_1} \int_0^\infty \frac{\dd{s}}{\twopi} \int \tildedp{q} \int \tildedp{k_2} ~ \twopidelta[4]{q - k_1 - k_2} \\
-        & = & & \frac{1}{4 \rmk_1} \int_0^\infty \frac{\dd{s}}{\twopi} \int \tildedp{q} ~ \frac{1}{2 \rmk_2} \twopidelta{\sqrt{\rmq^2 + s} - \rmk_1 - \rmk_2} \\
-        & = & & \frac{1}{4 \rmk_1} \int_0^\infty \frac{\dd{s}}{\twopi} \int \frac{\dd[3]{\vb{q}}}{\twopi[3] 2 \sqrt{\rmq^2 + s}} \frac{\rmk_1 \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2})}{s} \\
-        & & & \qquad {} \times \twopidelta{\sqrt{\rmq^2 + s} - \rmk_1 - \frac{s}{2 \rmk_1 \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2})}} \\
-        & = & & \frac{1}{4} \int_0^\infty \frac{\dd{s}}{\twopi s} \int_{-1}^{+1} \dd{\cos \expval{\vb{q}, \vb{k}_1}} \int_0^\infty \frac{\rmq^2 \dd{\rmq}}{\twopi[2] 2 \sqrt{\rmq^2 + s}} \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2}) \\
-        & & & \qquad {} \times \twopidelta{\sqrt{\rmq^2 + s} - \rmk_1 - \frac{s}{2 \rmk_1 \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2})}}.
+        & & & \frac{1}{4 \rmk_1} \int \frac{\dd{s}}{\twopi} \int \tildedp{q} ~ \tildedp{\rmk_2} \twopidelta[4]{q - k_1 - k_2} \\
+        & = & & \frac{1}{4 \rmk_1} \int_0^\infty \frac{\dd{s}}{\twopi} \int \tildedp{q} ~ \eval{\frac{1}{2 \rmk_2} \twopidelta{\sqrt{\rmq^2 + s} - \rmk_1 - \rmk_2}}_{\rmk_2 = \sqrt{\rmq^2 + \rmk_1^2 - 2 \rmq \rmk_1 \cos \expval{\vb{q}, \vb{k}_1}}} \\
+        & = & & \frac{1}{4 \rmk_1} \int_0^\infty \frac{\dd{s}}{\twopi} \int_{-1}^{+1} \dd{\cos \expval{\vb{q}, \vb{k}_1}} \int_0^\infty \frac{\rmq^2 \dd{\rmq}}{\twopi[2] 2 \sqrt{\rmq^2 + s}} \eval{\frac{1}{2 \rmk_2} \twopidelta{\sqrt{\rmq^2 + s} - \rmk_1 - \rmk_2}}_{\rmk_2 = \sqrt{\rmq^2 + \rmk_1^2 - 2 \rmq \rmk_1 \cos \expval{\vb{q}, \vb{k}_1}}} \\
+        & = & & \frac{1}{4 \rmk_1} \int_0^\infty \frac{\dd{s}}{\twopi} \int_0^\infty \frac{\rmq^2 \dd{\rmq}}{\twopi[2] 2 \sqrt{\rmq^2 + s}} \frac{1}{2 \rmk_2} \frac{\twopi \rmk_2}{\rmq \rmk_1} \tilde{\Theta}\qty(\rmq \ge \frac{\abs{s - 4 \rmk_1^2}}{4 \rmk_1}) \\
+        & = & & \frac{1}{16 \twopi[2] \rmk_1^2} \int_0^\infty \dd{s} \int_{\qty(s + 4 \rmk_1^2) / (4 \rmk_1)}^\infty \dd{E_q} \\
+        & = & & \frac{1}{16 \twopi[2] \rmk_1^2} \int_{\rmk_1}^\infty \dd{E_q} \int_0^{4 \rmk_1 \qty(E_q - \rmk_1)} \dd{s}.
     \end{aligned}
 \end{equation}
-Noticing $\vb{q} = \vb{k}_1 + \vb{k}_2$, we have
-\begin{equation}
-    \begin{aligned}
-        \vb{q} \cdot \vb{k}_1 & = \vb{k}_1^2 + \vb{k}_1 \cdot \vb{k}_2 \\
-        \rmq \rmk_1 \cos \expval{\vb{q}, \vb{k}_1} & = \rmk_1^2 + \rmk_1 \rmk_2 \cos \expval{\vb{k}_1, \vb{k}_2} \\
-        & = \rmk_1^2 + \frac{s \cos \expval{\vb{k}_1, \vb{k}_2}}{2 (1 - \cos \expval{\vb{k}_1, \vb{k}_2})},
-    \end{aligned}
-\end{equation}
-where we have applied
-\begin{equation*}
-    \rmk_2 = \frac{s}{2 \rmk_1 (1 - \cos \expval{\vb{k}_1, \vb{k}_2})}.
-\end{equation*}
-Therefore,
-\begin{equation}
-    \begin{aligned}
-        & & & \frac{1}{4} \int_0^\infty \frac{\dd{s}}{\twopi s} \int_{-1}^{+1} \dd{\cos \expval{\vb{q}, \vb{k}_1}} \int_0^\infty \frac{\rmq^2 \dd{\rmq}}{\twopi[2] 2 \sqrt{\rmq^2 + s}} \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2}) \\
-        & & & \qquad {} \times \twopidelta{\sqrt{\rmq^2 + s} - \rmk_1 - \frac{s}{2 \rmk_1 \qty(1 - \cos \expval{\vb{k}_1, \vb{k}_2})}} \\
-        & = & & \frac{1}{4} \int_0^\infty \frac{\dd{s}}{\twopi s} \int_0^\infty \frac{\rmq^2 \dd{\rmq}}{\twopi[2] 2 \sqrt{\rmq^2 + s}} \int_{-1}^{+1} \dd{\cos \expval{\vb{q}, \vb{k}_1}} \frac{s}{s - 2 \rmk_1 \qty(\rmk_1 - q \cos \expval{\vb{q}, \vb{k}_1})} \\
-        & & & \qquad {} \times \twopidelta{\sqrt{\rmq^2 + s} - \frac{s}{2 \rmk_1} - \rmq \cos \expval{\vb{q}, \vb{k}_1}} \\
-        & = & & \frac{1}{4} \int_0^\infty \frac{\dd{s}}{\twopi s} \int_0^\infty \frac{\rmq^2 \dd{\rmq}}{\twopi[2] 2 \sqrt{\rmq^2 + s}} \frac{\twopi s}{2 \rmq \rmk_1 \qty(\sqrt{\rmq^2 + s} - \rmk_1)} \tilde{\Theta}\qty(q \ge \frac{\abs{s - 4 \rmk_1^2}}{4 \rmk_1}) \\
-        & = & & \frac{1}{16 \twopi[2] \rmk_1} \int_0^\infty \dd{s} \int_{\abs{s - 4 \rmk_1^2} / (4 \rmk_1)}^\infty \frac{\rmq \dd{\rmq}}{\rmq^2 + s - \rmk_1 \sqrt{\rmq^2 + s}} \\
-        & = & & \frac{1}{16 \twopi[2] \rmk_1} \int_0^\infty \dd{s} \int_{\rmk_1 + s / (4 \rmk_1)}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \\
-        & = & & \frac{1}{16 \twopi[2] \rmk_1} \int_{\rmk_1}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \int_0^{4 \rmk_1 (E_q - \rmk_1)} \dd{s},
-    \end{aligned}
-\end{equation}
-where we have applied $E_q = \sqrt{\rmq^2 + s}$.
 Taking it back into the integration of $\CT[f_h][\varphi \varphi \to h h]$, we have
 \begin{equation}
     \begin{aligned}
         & & & \CT[f_h][\varphi \varphi \to h h] \\
-        & = & & \frac{1}{16 \twopi[2] \rmk_1} \int_{\rmk_1}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \int_0^{4 \rmk_1 (E_q - \rmk_1)} \dd{s} \\
+        & = & & \frac{1}{16 \twopi[2] \rmk_1^2} \int_{\rmk_1}^\infty \dd{E_q} \int_0^{4 \rmk_1 (E_q - \rmk_1)} \dd{s} \\
         & & & \qquad {} \times \int \tildedp{p_1} ~ \tildedp{p_2} ~ \twopidelta[4]{q - p_1 - p_2} f_\varphi(p_1) f_\varphi(p_2) \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2}. \\
     \end{aligned}
 \end{equation}
@@ -208,10 +180,8 @@ Therefore,
 \begin{equation}
     \begin{aligned}
         & & & \CT[f_h][\varphi \varphi \to h h] \\
-        & = & & \frac{1}{64 \twopi[4] \rmk_1} \int_{\rmk_1}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \int_0^{4 \rmk_1 (E_q - \rmk_1)} \frac{\dd{s}}{\rmq} \int_{(E_q - \rmq) / 2}^{(E_q + \rmq) / 2} \dd{\rmp_1} f_\varphi(\rmp_1) f_\varphi\qty(E_q - \rmp_1) \\
-        & & & \qquad {} \times \int_{0}^{2 \pi} \dd{\varphi} \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2} \\
-        & = & & \frac{1}{64 \twopi[4] \rmk_1} \int_{\rmk_1}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \int_0^{E_q} \dd{\rmp_1} f_\varphi(\rmp_1) f_\varphi\qty(E_q - \rmp_1) \int_0^{s_{\max}} \frac{\dd{s}}{\rmq} \\
-        & & & \qquad {} \times \int_{0}^{2 \pi} \dd{\varphi} \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2},
+        & = & & \frac{1}{64 \twopi[4] \rmk_1^2} \int_{\rmk_1}^\infty \dd{E_q} \int_0^{4 \rmk_1 (E_q - \rmk_1)} \frac{\dd{s}}{\rmq} \int_{(E_q - \rmq) / 2}^{(E_q + \rmq) / 2} \dd{\rmp_1} f_\varphi(\rmp_1) f_\varphi\qty(E_q - \rmp_1) \int_{0}^{2 \pi} \dd{\varphi} \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2} \\
+        & = & & \frac{1}{64 \twopi[4] \rmk_1^2} \int_{\rmk_1}^\infty \dd{E_q} \int_0^{E_q} \dd{\rmp_1} f_\varphi(\rmp_1) f_\varphi\qty(E_q - \rmp_1) \int_0^{s_{\max}} \frac{\dd{s}}{\rmq} \int_{0}^{2 \pi} \dd{\varphi} \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2},
     \end{aligned}
     \label{eq:CT-f_h-analytical}
 \end{equation}
@@ -274,9 +244,9 @@ whose solution is simply
 Applying the collision term of Eq.~\eqref{eq:CT-f_h-analytical}, we have
 \begin{equation}
     \begin{aligned}
-        \tilde{f}_h\qty(a, \tilde{k}_1) & = & & \int_{a_\ini}^{a} \frac{\dd{\alpha}}{H(\alpha) \alpha} \frac{1}{64 \twopi[4] \rmk_1} \int_{\rmk_1}^\infty \frac{\dd{E_q}}{E_q - \rmk_1} \int_0^{E_q} \dd{\rmp_1} f_\varphi(\rmp_1) f_\varphi\qty(E_q - \rmp_1) \\
+        \tilde{f}_h\qty(a, \tilde{k}_1) & = & & \int_{a_\ini}^{a} \frac{\dd{\alpha}}{H(\alpha) \alpha} \frac{1}{64 \twopi[4] \rmk_1^2} \int_{\rmk_1}^\infty \dd{E_q} \int_0^{E_q} \dd{\rmp_1} f_\varphi(\rmp_1) f_\varphi\qty(E_q - \rmp_1) \\
         & & & \qquad {} \times \int_0^{s_{\max}} \frac{\dd{s}}{\rmq} \int_{0}^{2 \pi} \dd{\varphi} \frac{2 t^2 \qty(s + t)^2}{\MPl^4 s^2} \\
-        & = & & \frac{1}{64 \twopi[4]} \int_{a_\ini}^{a} \frac{\dd{\alpha}}{H(\alpha) \tilde{\rmk}_1} \int_{\tilde{\rmk}_1}^\infty \frac{\dd{\tilde{E}_q}}{\tilde{E}_q - \tilde{\rmk}_1} \int_0^{\tilde{E}_q} \frac{\dd{\tilde{\rmp}_1}}{\alpha} \tilde{f}_\varphi(\alpha, \tilde{\rmp}_1) \tilde{f}_\varphi\qty(\alpha, \tilde{E}_q - \tilde{\rmp}_1) \\
+        & = & & \frac{1}{64 \twopi[4]} \int_{a_\ini}^{a} \frac{\alpha \dd{\alpha}}{H(\alpha) \tilde{\rmk}_1^2} \int_{\tilde{\rmk}_1}^\infty \frac{\dd{\tilde{E}_q}}{\alpha} \int_0^{\tilde{E}_q} \frac{\dd{\tilde{\rmp}_1}}{\alpha} \tilde{f}_\varphi(\alpha, \tilde{\rmp}_1) \tilde{f}_\varphi\qty(\alpha, \tilde{E}_q - \tilde{\rmp}_1) \\
         & & & \qquad {} \times \int_0^{\tilde{s}_{\max}} \frac{\dd{\tilde{s}}}{\tilde{\rmq} \alpha} \int_{0}^{2 \pi} \dd{\varphi} \frac{2 \tilde{t}^2 \qty(\tilde{s} + \tilde{t})^2}{\MPl^4 \tilde{s}^2 \alpha^4}
     \end{aligned}
 \end{equation}
@@ -309,8 +279,8 @@ Furthermore, the non-vanishing product of $\tilde{f}_\varphi(\alpha, \tilde{\rmp
 Hence, the integration ranges of $\tilde{\rmk}_1$, $\tilde{\rmq}$ and $\tilde{\rmp}_1$ are constrained, \ie,
 \begin{equation}
     \begin{aligned}
-        \tilde{f}_h\qty(a, \tilde{\rmk}_1) & = & & \frac{1}{64 \twopi[4] \tilde{\rmk}_1} \tilde{\Theta}\qty(0 \le \tilde{\rmk}_1 \le m_\phi a) \int_{\max\qty(a_\ini, \tilde{k}_1 / m_\phi)}^{a} \frac{\dd{\alpha}}{H(\alpha) \alpha^6} \\
-        & & & \qquad {} \times \int_{\max\qty(\tilde{\rmk}_1, m_\phi a_\ini)}^{m_\phi \alpha} \frac{\dd{\tilde{E}_q}}{\tilde{E}_q - \tilde{\rmk}_1} \int_{\tilde{\rmp}_1^{(-)}}^{\tilde{\rmp}_1^{(+)}} \dd{\tilde{\rmp}_1} \tilde{f}_\varphi(\alpha, \tilde{\rmp}_1) \tilde{f}_\varphi\qty(\alpha, \tilde{E}_q - \tilde{\rmp}_1) \\
+        \tilde{f}_h\qty(a, \tilde{\rmk}_1) & = & & \frac{1}{64 \twopi[4] \tilde{\rmk}_1^2} \tilde{\Theta}\qty(0 \le \tilde{\rmk}_1 \le m_\phi a) \int_{\max\qty(a_\ini, \tilde{k}_1 / m_\phi)}^{a} \frac{\dd{\alpha}}{H(\alpha) \alpha^6} \\
+        & & & \qquad {} \times \int_{\max\qty(\tilde{\rmk}_1, m_\phi a_\ini)}^{m_\phi \alpha} \dd{\tilde{E}_q} \int_{\tilde{\rmp}_1^{(-)}}^{\tilde{\rmp}_1^{(+)}} \dd{\tilde{\rmp}_1} \tilde{f}_\varphi(\alpha, \tilde{\rmp}_1) \tilde{f}_\varphi\qty(\alpha, \tilde{E}_q - \tilde{\rmp}_1) \\
         & & & \qquad {} \times \int_0^{\tilde{s}_{\max}} \frac{\dd{\tilde{s}}}{\tilde{\rmq}} \int_{0}^{2 \pi} \dd{\varphi} \frac{2 \tilde{t}^2 \qty(\tilde{s} + \tilde{t})^2}{\MPl^4 \tilde{s}^2},
     \end{aligned}
 \end{equation}
@@ -318,6 +288,187 @@ where
 \begin{equation}
     \tilde{\rmp}_1^{(\pm)} = \frac{1}{2} \qty[\tilde{E}_q \pm \min\qty(m_\phi \alpha - \tilde{E}_q, \tilde{E}_q - m_\phi a_\ini)].
 \end{equation}
+
+\paragraph{Dirac-$\delta$ Approximation}
+Let us consider the approximation that
+\begin{equation}
+    f_\varphi\qty(t, \rmp_\varphi) \simeq \frac{2 \pi^2}{\rmp_\varphi^2} n_\varphi(t) \delta\qty(\rmp_\varphi - \frac{m_\phi}{2} \frac{a_\ini}{a(t)}),
+\end{equation}
+or equivalently,
+\begin{equation}
+    \tilde{f}_\varphi\qty(a, \tilde{\rmp}_\varphi) \simeq \frac{2 \pi^2}{\tilde{\rmp}_\varphi^2} \qty[n_\varphi(a) a^3] \delta\qty(\tilde{\rmp}_\varphi - \frac{m_\phi a_\ini}{2}).
+\end{equation}
+Applying this approximation, we have
+\begin{equation}
+    \begin{aligned}
+        \tilde{f}_h\qty(a, \tilde{\rmk}_1) & = & & \frac{1}{64 \twopi[4] \tilde{\rmk}_1^2} \tilde{\Theta}\qty(0 \le \tilde{\rmk}_1 \le m_\phi a) \int_{\max\qty(a_\ini, \tilde{k}_1 / m_\phi)}^{a} \frac{\dd{\alpha}}{H(\alpha) \alpha^6} \int_{\max\qty(\tilde{\rmk}_1, m_\phi a_\ini)}^{m_\phi \alpha} \dd{\tilde{E}_q} \\
+        & & & \qquad {} \times \int_{\tilde{\rmp}_1^{(-)}}^{\tilde{\rmp}_1^{(+)}} \dd{\tilde{\rmp}_1} \frac{4 \pi^4}{\tilde{\rmp}_1^2 \qty(\tilde{E}_q - \tilde{\rmp}_1)^2} \qty[n_\varphi(\alpha) \alpha^3]^2 \delta\qty(\tilde{\rmp}_1 - \frac{m_\phi a_\ini}{2}) \delta\qty(\tilde{E}_q - \tilde{\rmp}_1 - \frac{m_\phi a_\ini}{2}) \\
+        & & & \qquad {} \times \int_0^{\tilde{s}_{\max}} \frac{\dd{\tilde{s}}}{\tilde{\rmq}} \int_{0}^{2 \pi} \dd{\varphi} \frac{2 \tilde{t}^2 \qty(\tilde{s} + \tilde{t})^2}{\MPl^4 \tilde{s}^2} \\
+        & = & & \frac{1}{256 \tilde{\rmk}_1^2} \tilde{\Theta}\qty(0 \le \tilde{\rmk}_1 \le m_\phi a) \int_{\max\qty(a_\ini, \tilde{k}_1 / m_\phi)}^{a} \frac{\qty[n_\varphi(\alpha) \alpha^3]^2}{H(\alpha) \alpha^6} \dd{\alpha} \\
+        & & & \qquad {} \times \int_{\max\qty(\tilde{\rmk}_1, m_\phi a_\ini)}^{m_\phi \alpha} \dd{\tilde{E}_q} \tilde{\Theta}\qty(\tilde{\rmp}_1^{(-)} \le \frac{m_\phi a_\ini}{2} \le \tilde{\rmp}_1^{(+)}) \qty(\frac{2}{m_\phi a_\ini})^4 \delta\qty(\tilde{E}_q - m_\phi a_\ini) \\
+        & & & \qquad {} \times \int_0^{\tilde{s}_{\max}} \frac{\dd{\tilde{s}}}{\tilde{\rmq}} \int_{0}^{2 \pi} \dd{\varphi} \frac{2 \tilde{t}^2 \qty(\tilde{s} + \tilde{t})^2}{\MPl^4 \tilde{s}^2} \\
+        & = & & \frac{1}{16 m_\phi^4 a_\ini^4 \tilde{\rmk}_1^2} \tilde{\Theta}\qty(0 \le \tilde{\rmk}_1 \le m_\phi a_\ini) \int_{a_\ini}^{a} \frac{\qty[n_\varphi(\alpha) \alpha^3]^2}{H(\alpha) \alpha^6} \dd{\alpha} \\
+        & & & \qquad {} \times \int_0^{4 \tilde{\rmk}_1 \qty(m_\phi a_\ini - \tilde{\rmk}_1)} \frac{\dd{\tilde{s}}}{\tilde{\rmq}} \int_{0}^{2 \pi} \dd{\varphi} \frac{2 \tilde{t}^2 \qty(\tilde{s} + \tilde{t})^2}{\MPl^4 \tilde{s}^2} \\
+        & = & & \frac{1}{16 m_\phi^4 a_\ini^4 \tilde{\rmk}_1^2} \tilde{\Theta}\qty(0 \le \tilde{\rmk}_1 \le m_\phi a_\ini) \int_{a_\ini}^{a} \frac{\qty[n_\varphi(\alpha) \alpha^3]^2}{H(\alpha) \alpha^6} \dd{\alpha} \\
+        & & & \qquad {} \times \frac{4 \pi}{15 \MPl^4} \qty[
+            \begin{aligned}
+                m_\phi a_\ini \qty(
+                    \begin{aligned}
+                        30 \tilde{\rmk}_1^4 - 60 \tilde{\rmk}_1^3 \qty(m_\phi a_\ini) + 40 \tilde{\rmk}_1^2 \qty(m_\phi a_\ini)^2 \\
+                        {} - 10 \tilde{\rmk}_1 \qty(m_\phi a_\ini)^3 + \qty(m_\phi a_\ini)^4
+                    \end{aligned}
+                ) \\
+                {} - \abs{m_\phi a_\ini - 2 \tilde{\rmk}_1}^5
+            \end{aligned}
+        ].
+    \end{aligned}
+\end{equation}
+
+\section{\boldmath \texorpdfstring{$\varphi + \phi \to \varphi + h$}{varphi + phi -> varphi + h}}
+
+In this section, we consider the process of $\varphi(p_\varphi) + \phi(p_\phi) \to \varphi(k_\varphi) + h(k_h)$, whose squared amplitude is given by\footnote{The expression is not checked yet.}
+\begin{equation}
+    \sumAmpNormSqr{\varphi + \phi \to \varphi + h} = \frac{\lambda^{2}}{2 \MPl^2} \qty(2 - \frac{m_\phi}{E_h})^2.
+\end{equation}
+The collision term reads
+\begin{equation}
+    \begin{aligned}
+        & & & \CT[f_h][\varphi \phi \to \varphi h][t, \rmk_h] \\
+        & = & & \frac{1}{2 E_h} \int \tildedp{p_\varphi} ~ \tildedp{p_\phi} ~ \tildedp{k_\varphi} ~ \twopidelta[4]{p_\varphi + p_\phi - k_\varphi - k_h} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} f_\varphi(p_\varphi) f_\phi(p_\phi) \qty[1 + f_\varphi(k_\varphi)] \\
+        & = & & \frac{1}{2 \rmk_h} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int \tildedp{p_\varphi} ~ \tildedp{p_\phi} ~ \tildedp{k_\varphi} ~ \twopidelta[4]{p_\varphi + p_\phi - k_\varphi - k_h} f_\varphi(p_\varphi) f_\phi(p_\phi) \qty[1 + f_\varphi(k_\varphi)].
+    \end{aligned}
+\end{equation}
+Also inserting two identities of
+\begin{align}
+    1 & \equiv \int \frac{\dd[4]{q}}{\twopi[4]} \twopidelta[4]{q - p_\varphi - p_\phi}, \\
+    1 & \equiv \int \frac{\dd{s}}{\twopi} \twopidelta{s + q^2},
+\end{align}
+we have
+\begin{equation}
+    \begin{aligned}
+        \CT[f_h][\varphi \phi \to \varphi h] & = & & \frac{1}{2 \rmk_h} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int \frac{\dd{s}}{\twopi} \int \frac{\dd[4]{q}}{\twopi[4]} \twopidelta{s + q^2} \\
+        & & & \qquad {} \times \int \tildedp{p_\varphi} ~ \tildedp{p_\phi} ~ \twopidelta[4]{q - p_\varphi - p_\phi} f_\varphi(p_\varphi) f_\phi(p_\phi) \\
+        & & & \qquad {} \times \int \tildedp{k_\varphi} ~ \twopidelta[4]{q - k_\varphi - k_h} \qty[1 + f_\varphi(k_\varphi)] \\
+        & = & & \frac{1}{2 \rmk_h} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int_0^\infty \frac{\dd{s}}{\twopi} \int \tildedp{q} ~ \tildedp{k_\varphi} ~ \twopidelta[4]{q - k_\varphi - k_h} \qty[1 + f_\varphi(k_\varphi)] \\
+        & & & \qquad {} \times \int \tildedp{p_\varphi} ~ \tildedp{p_\phi} ~ \twopidelta[4]{q - p_\varphi - p_\phi} f_\varphi(p_\varphi) f_\phi(p_\phi).
+    \end{aligned}
+\end{equation}
+Here, the integration over $q$ and $k_\varphi$ can be performed as (details are shown in the previous section)
+\begin{equation}
+    \begin{aligned}
+        & & & \int_0^\infty \frac{\dd{s}}{\twopi} \int \tildedp{q} ~ \tildedp{k_\varphi} ~ \twopidelta[4]{q - k_\varphi - k_h} \qty[1 + f_\varphi(k_\varphi)] \\
+        & = & & \frac{1}{4 \twopi[2] \rmk_h} \int_0^\infty \dd{s} \int_{\qty(s + 4 \rmk_h^2) / \qty(4 \rmk_h)}^\infty \dd{E_q} \qty[1 + f_\varphi\qty(E_q - \rmk_h)] \\
+        & = & & \frac{1}{4 \twopi[2] \rmk_h} \int_{\rmk_h}^\infty \dd{E_q} \int_0^{4 \rmk_h (E_q - \rmk_h)} \dd{s} \qty[1 + f_\varphi\qty(E_q - \rmk_h)].
+    \end{aligned}
+\end{equation}
+Differently, the integration over $p_\varphi$ and $p_\phi$ is not the same as before since $\phi$ is massive, which reads
+\begin{equation}
+    \begin{aligned}
+        & & & \int \tildedp{p_\varphi} ~ \tildedp{p_\phi} ~ \twopidelta[4]{q - p_\varphi - p_\phi} \\
+        & = & & \int \eval{\frac{\tildedp{p_\phi}}{2 \rmp_\varphi} \twopidelta{E_q - \rmp_\varphi - \sqrt{\rmp_\phi^2 + m_\phi^2}}}_{\rmp_\varphi = \sqrt{\rmq^2 + \rmp_\phi^2 - 2 \rmq \rmp_\phi \cos \expval{\vb{q}, \vb{p}_\phi}}} \\
+        & = & & \int_{-1}^{+1} \dd{\cos \expval{\vb{q}, \vb{p}_\phi}} \int_0^\infty \eval{\frac{\rmp_\phi^2 \dd{\rmp_\phi}}{\twopi[2] 2 E_\phi 2 \rmp_\varphi} \twopidelta{E_q - \rmp_\varphi - \sqrt{\rmp_\phi^2 + m_\phi^2}}}_{\rmp_\varphi = \sqrt{\rmq^2 + \rmp_\phi^2 - 2 \rmq \rmp_\phi \cos \expval{\vb{q}, \vb{p}_\phi}}} \\
+        & = & & \int_0^\infty \frac{\rmp_\phi^2 \dd{\rmp_\phi}}{\twopi[] 2 E_\phi 2 \rmp_\varphi} \frac{\rmp_\varphi}{\rmq \rmp_\phi} \tilde{\Theta}\qty(\frac{\abs{\qty(E_q - \rmq)^2 - m_\phi^2}}{2 \qty(E_q - \rmq)} \le \rmp_\phi \le \frac{\qty(E_q + \rmq)^2 - m_\phi^2}{2 \qty(E_q + \rmq)}) \\
+        & = & & \frac{1}{4 \twopi[] \rmq} \int_{E_\phi^{(-)}}^{E_\phi^{(+)}} \dd{E_\phi}
+    \end{aligned}
+\end{equation}
+with
+\begin{equation}
+    E_\phi^{(\pm)} = \frac{\qty(E_q \pm \rmq)^2 + m_\phi^2}{2 \qty(E_q \pm \rmq)}.
+\end{equation}
+Therefore,
+\begin{equation}
+    \begin{aligned}
+        \CT[f_h][\varphi \phi \to \varphi h] & = & & \frac{1}{32 \twopi[3] \rmk_h^2} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int_0^\infty \dd{s} \int_{\qty(s + 4 \rmk_h^2) / \qty(4 \rmk_h)}^\infty \frac{\dd{E_q}}{\rmq} \\
+        & & & \qquad {} \times \int_{E_\phi^{(-)}}^{E_\phi^{(+)}} \dd{E_\phi} f_\varphi\qty(E_q - E_\phi) f_\phi\qty(\sqrt{E_\phi^2 - m_\phi^2}) \qty[1 + f_\varphi\qty(E_q - \rmk_h)].
+    \end{aligned}
+\end{equation}
+
+In our consideration, the distribution of $\phi$ is given by
+\begin{equation}
+    f_\phi(t, \rmp_\phi) = \frac{2 \pi^2}{\rmp_\phi^2} n_\phi(t) \delta(\rmp_\phi - \epsilon),
+\end{equation}
+where $\epsilon > 0$ is an infinitesimal to regularize the behavior of $f_\phi(\rmp_\phi)$ at $\rmp_\phi \to 0$.
+So, the collision term becomes
+\begin{equation}
+    \begin{aligned}
+        & & & & & \CT[f_h][\varphi \phi \to \varphi h][t, \rmk_h] \\
+        & & = & & & \frac{1}{32 \twopi[3] \rmk_h^2} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int_0^\infty \dd{s} \int_{\qty(s + 4 \rmk_h^2) / \qty(4 \rmk_h)}^\infty \frac{\dd{E_q}}{\rmq} \\
+        & & & & & \qquad {} \times \int_{E_\phi^{(-)}}^{E_\phi^{(+)}} \dd{E_\phi} f_\varphi\qty(E_q - E_\phi) \frac{2 \pi^2}{E_\phi^2 - m_\phi^2} n_\phi(t) \delta\qty(\sqrt{E_\phi^2 - m_\phi^2} - \epsilon) \qty[1 + f_\varphi\qty(E_q - \rmk_h)] \\
+        & & = & & & \frac{n_\phi(t)}{64 \twopi[] \rmk_h^2} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int_0^\infty \dd{s} \int_{\qty(s + 4 \rmk_h^2) / \qty(4 \rmk_h)}^\infty \frac{\dd{E_q}}{\rmq} \\
+        & & & & & \qquad {} \times f_\varphi\qty(E_q - \sqrt{m_\phi^2 + \epsilon^2}) \qty[1 + f_\varphi\qty(E_q - \rmk_h)] \\
+        & & & & & \qquad {} \times \frac{\epsilon}{\sqrt{m_\phi^2 + \epsilon^2}} \tilde{\Theta}\qty(\abs{E_q - \epsilon - \sqrt{m_\phi^2 + \epsilon^2}} \le \rmq \le E_q + \epsilon - \sqrt{m_\phi^2 + \epsilon^2}) \frac{1}{\epsilon^2} \\
+        & & \tensor[_{\epsilon \to 0}]{=}{} & & & \frac{n_\phi(t)}{64 \twopi[] \rmk_h^2} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int_0^\infty \dd{s} \\
+        & & & & & \qquad {} \times \int_{\qty(s + 4 \rmk_h^2) / \qty(4 \rmk_h)}^\infty \frac{\dd{E_q}}{\rmq} \frac{s - m_\phi^2}{m_\phi^3} \delta\qty(E_q - \frac{s + m_\phi^2}{2 m_\phi}) f_\varphi(E_q - m_\phi) \qty[1 + f_\varphi\qty(E_q - \rmk_h)] \\
+        & & = & & & \frac{n_\phi(t)}{64 \twopi[] \rmk_h^2} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int_0^\infty \frac{2 \dd{s}}{m_\phi^2} \tilde{\Theta}\qty(\frac{s + m_\phi^2}{2 m_\phi} \ge \frac{s + 4 \rmk_h^2}{4 \rmk_h}) \\
+        & & & & & \qquad {} \times f_\varphi\qty(\frac{s - m_\phi^2}{2 m_\phi}) \qty[1 + f_\varphi\qty(\frac{s + m_\phi^2}{2 m_\phi} - \rmk_h)] \\
+        & & = & & & \frac{n_\phi(t)}{32 \twopi[] m_\phi^2 \rmk_h^2} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \tilde{\Theta}\qty(\rmk_h \ge \frac{m_\phi}{2}) \int_{2 m_\phi \rmk_h}^\infty \dd{s} f_\varphi\qty(\frac{s - m_\phi^2}{2 m_\phi}) \qty[1 + f_\varphi\qty(\frac{s + m_\phi^2}{2 m_\phi} - \rmk_h)].
+    \end{aligned}
+\end{equation}
+
+\paragraph{\boldmath Dirac-$\delta$ Approximation for \texorpdfstring{$f_\varphi$}{f\_varphi}}
+Also considering the Dirac-$\delta$ approximation for $f_\varphi$ as
+\begin{equation}
+    f_\varphi\qty(t, \rmp_\varphi) \simeq \frac{2 \pi^2}{\rmp_\varphi^2} n_\varphi(t) \delta\qty(\rmp_\varphi - \frac{m_\phi}{2} \frac{a_\ini}{a(t)}),
+\end{equation}
+the above collision term now becomes
+\begin{equation}
+    \begin{aligned}
+        & & & \CT[f_h][\varphi \phi \to \varphi h][t, \rmk_h] \\
+        & \simeq & & \frac{n_\phi(t)}{32 \twopi[] m_\phi^2 \rmk_h^2} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \tilde{\Theta}\qty(\rmk_h \ge \frac{m_\phi}{2}) \int_{2 m_\phi \rmk_h}^\infty \dd{s} 2 \pi^2 \qty(\frac{2 m_\phi}{s - m_\phi^2})^2 n_\varphi(t) \delta\qty(\frac{s - m_\phi^2}{2 m_\phi} - \frac{m_\phi}{2} \frac{a_\ini}{a(t)}) \\
+        & & & \qquad {} \times \qty[1 + \frac{2 \pi^2 n_\varphi(t)}{\qty(\frac{s + m_\phi^2}{2 m_\phi} - \rmk_h)^2} \delta\qty(\frac{s + m_\phi^2}{2 m_\phi} - \rmk_h - \frac{m_\phi}{2} \frac{a_\ini}{a(t)})] \\
+        & = & & \frac{\pi n_\phi(t) n_\varphi(t)}{4 m_\phi^3 \rmk_h^2} \qty[\frac{a(t)}{a_\ini}]^2 \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \tilde{\Theta}\qty[\frac{m_\phi}{2} \le \rmk_h \le \frac{m_\phi}{2} \qty(1 + \frac{a_\ini}{a(t)})] \\
+        & & & \qquad {} \times \qty(1 + \frac{2 \twopi[2] n_\varphi(t)}{m_\phi^2} \qty[\frac{a(t)}{a_\ini}]^2 \delta\qty(\rmk_h - m_\phi)).
+    \end{aligned}
+\end{equation}
+
+\paragraph{Direct Integration with Dirac-$\delta$ Approximation}
+Now we consider to integrate the collision term directly with the Dirac-$\delta$ approximation for $f_\phi$ and $f_\varphi$ as
+\begin{equation}
+    \begin{aligned}
+        & & & & & \CT[f_h][\varphi \phi \to \varphi h][t, \rmk_h] \\
+        & & = & & & \frac{1}{2 E_h} \int \tildedp{p_\varphi} ~ \tildedp{p_\phi} ~ \tildedp{k_\varphi} ~ \twopidelta[4]{p_\varphi + p_\phi - k_\varphi - k_h} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} f_\varphi(p_\varphi) f_\phi(p_\phi) \qty[1 + f_\varphi(k_\varphi)] \\
+        & & = & & & \frac{1}{2 \rmk_h} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \\
+        & & & & & \qquad {} \times \int \tildedp{p_\varphi} ~ \tildedp{p_\phi} \eval{\frac{1}{2 \rmk_\varphi} \twopidelta{\rmp_\varphi + E_\phi - \rmk_\varphi - \rmk_h} f_\varphi(p_\varphi) f_\phi(p_\phi) \qty[1 + f_\varphi(\rmk_\varphi)]}_{\rmk_\varphi = \abs{\vb{p}_\varphi + \vb{p}_\phi - \vb{k}_\varphi - \vb{k}_h}} \\
+        & & = & & & \frac{1}{2 \rmk_h} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int \frac{\dd[3]{\vb{p}_\phi}}{\twopi[3] 2 E_\phi} \frac{2 \pi^2}{\rmp_\phi^2} n_\phi(t) \delta(\rmp_\phi - \epsilon) \int \frac{\dd[3]{\vb{p}_\varphi}}{\twopi[3] 2 \rmp_\varphi} \frac{2 \pi^2}{\rmp_\varphi^2} n_\varphi(t) \delta\qty(\rmp_\varphi - \frac{m_\phi}{2} \frac{a_\ini}{a(t)}) \\
+        & & & & & \qquad {} \times \eval{\frac{1}{2 \rmk_\varphi} \twopidelta{\rmp_\varphi + E_\phi - \rmk_\varphi - \rmk_h} \qty[1 + f_\varphi(\rmk_\varphi)]}_{\rmk_\varphi = \abs{\vb{p}_\varphi + \vb{p}_\phi - \vb{k}_\varphi - \vb{k}_h}} \\
+        & & = & & & \frac{1}{2 \rmk_h} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int_{-1}^{+1} \dd{\cos \expval{\vb{p}_\phi, \vb{k}_h}} \int_{-1}^{+1} \dd{\cos \expval{\vb{p}_\varphi, \vb{k}_h}} \int_0^{2 \pi} \dd{\varphi_{\vb{p}_\phi}} \int_0^{2 \pi} \dd{\varphi_{\vb{p}_\varphi}} \\
+        & & & & & \qquad {} \times \int_0^\infty \frac{\rmp_\phi^2 \dd{\rmp_\phi}}{\twopi[3] 2 E_\phi} \frac{2 \pi^2}{\rmp_\phi^2} n_\phi(t) \delta(\rmp_\phi - \epsilon) \int_0^\infty \frac{\rmp_\varphi^2 \dd{\rmp_\varphi}}{\twopi[3] 2 \rmp_\varphi} \frac{2 \pi^2}{\rmp_\varphi^2} n_\varphi(t) \delta\qty(\rmp_\varphi - \frac{m_\phi}{2} \frac{a_\ini}{a(t)}) \\
+        & & & & & \qquad {} \times \eval{\frac{1}{2 \rmk_\varphi} \twopidelta{\rmp_\varphi + E_\phi - \rmk_\varphi - \rmk_h} \qty[1 + f_\varphi(\rmk_\varphi)]}_{\rmk_\varphi = \abs{\vb{p}_\varphi + \vb{p}_\phi - \vb{k}_\varphi - \vb{k}_h}} \\
+        & & = & & & \frac{1}{2 \rmk_h} \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int_{-1}^{+1} \dd{\cos \expval{\vb{p}_\phi, \vb{k}_h}} \int_{-1}^{+1} \dd{\cos \expval{\vb{p}_\varphi, \vb{k}_h}} \int_0^{2 \pi} \dd{\varphi_{\vb{p}_\phi}} \int_0^{2 \pi} \dd{\varphi_{\vb{p}_\varphi}} \\
+        & & & & & \qquad {} \times \frac{n_\phi(t) n_\varphi(t)}{16 \twopi[2]} \frac{2}{m_\phi \sqrt{m_\phi^2 + \epsilon^2}} \qty[\frac{a(t)}{a_\ini}] \qty[1 + \frac{2 \pi^2}{\rmk_\varphi^2} n_\varphi(t) \delta\qty(\rmk_\varphi - \frac{m_\phi}{2} \frac{a_\ini}{a(t)})] \\
+        & & & & & \qquad {} \times\eval{\frac{1}{2 \rmk_\varphi} \twopidelta{\frac{m_\phi}{2} \frac{a_\ini}{a(t)} + \sqrt{\epsilon^2 + m_\phi^2} - \rmk_\varphi - \rmk_h}}_{\rmk_\varphi = \abs{\vb{p}_\varphi + \vb{p}_\phi - \vb{k}_\varphi - \vb{k}_h}} \\
+        & & \tensor[_{\epsilon \to 0}]{=}{} & & & \frac{n_\phi(t) n_\varphi(t)}{8 m_\phi^2 \rmk_h} \qty[\frac{a(t)}{a_\ini}] \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \int_{-1}^{+1} \dd{\cos \expval{\vb{p}_\varphi, \vb{k}_h}} \\
+        & & & & & \qquad {} \times \eval{\frac{\pi}{\rmk_\varphi} \qty[1 + \frac{2 \pi^2}{\rmk_\varphi^2} n_\varphi(t) \delta\qty(\rmk_\varphi - \frac{m_\phi}{2} \frac{a_\ini}{a(t)})] \delta\qty(\frac{m_\phi}{2} \frac{a_\ini}{a(t)} + m_\phi - \rmk_\varphi - \rmk_h)}_{\rmk_\varphi = \abs{\vb{p}_\varphi - \vb{k}_\varphi - \vb{k}_h}} \\
+        & & = & & & \frac{n_\phi(t) n_\varphi(t)}{8 m_\phi^2 \rmk_h} \qty[\frac{a(t)}{a_\ini}] \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \tilde{\Theta}\qty[\frac{m_\phi}{2} \le \rmk_h \le \frac{m_\phi}{2} \qty(1 + \frac{a_\ini}{a(t)})] \\
+        & & & & & \qquad {} \times \eval{\frac{\pi}{\rmk_\varphi} \qty[1 + \frac{2 \pi^2}{\rmk_\varphi^2} n_\varphi(t) \delta\qty(\rmk_\varphi - \frac{m_\phi}{2} \frac{a_\ini}{a(t)})] \frac{2 \rmk_\varphi}{m_\phi \rmk_h} \qty[\frac{a(t)}{a_\ini}]}_{\rmk_\varphi = \frac{m_\phi}{2} \frac{a_\ini}{a(t)} + m_\phi - \rmk_h} \\
+        & & = & & & \frac{\pi n_\phi(t) n_\varphi(t)}{4 m_\phi^3 \rmk_h^2} \qty[\frac{a(t)}{a_\ini}]^2 \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \tilde{\Theta}\qty[\frac{m_\phi}{2} \le \rmk_h \le \frac{m_\phi}{2} \qty(1 + \frac{a_\ini}{a(t)})] \qty[1 + \frac{2 \pi^2 n_\varphi(t) \delta\qty(m_\phi - \rmk_h)}{\qty(\frac{m_\phi}{2} \frac{a_\ini}{a(t)} + m_\phi - \rmk_h)^2}] \\
+        & & = & & & \frac{\pi n_\phi(t) n_\varphi(t)}{4 m_\phi^3 \rmk_h^2} \qty[\frac{a(t)}{a_\ini}]^2 \sumAmpNormSqr{\varphi + \phi \to \varphi + h} \tilde{\Theta}\qty[\frac{m_\phi}{2} \le \rmk_h \le \frac{m_\phi}{2} \qty(1 + \frac{a_\ini}{a(t)})] \\
+        & & & & & \qquad {} \times \qty[1 + \frac{8 \pi^2 n_\varphi(t)}{m_\phi^2} \qty[\frac{a(t)}{a_\ini}]^2 \delta\qty(\rmk_h - m_\phi)] .
+    \end{aligned}
+\end{equation}
+
+\section{\boldmath \texorpdfstring{$\phi \to \varphi + \varphi + h$}{phi -> varphi + varphi + h}}
+
+The squared amplitude of the process $\phi(p_\phi) \to \varphi(k_1) + \varphi(k_2) + h(k_h)$ is given by
+\begin{equation}
+    \sumAmpNormSqr{\phi \to \varphi + \varphi + h} = \frac{2 \lambda^2}{\MPl^2} \qty(1 - \frac{m_\phi}{2 E_h})^2.
+\end{equation}
+Then the corresponding collision term reads
+\begin{equation}
+    \begin{aligned}
+        & & & \CT[f_h][\phi \to \varphi \varphi h][t, \rmk_h] \\
+        & = & & \frac{1}{2 E_h} \int \tildedp{p_\phi} ~ \tildedp{k_1} ~ \tildedp{k_2} ~ \twopidelta[4]{p_\phi - k_1 - k_2 - k_h} \frac{1}{2} \sumAmpNormSqr{\phi \to \varphi + \varphi + h} f_\phi(p_\phi) \qty[1 + f_\varphi(k_1)] \qty[1 + f_\varphi(k_2)],
+    \end{aligned}
+\end{equation}
+where the factor of $1 / 2$ is the symmetry factor for two identical particles in the final state.
+
+\paragraph{\boldmath Direct Integration with Dirac-$\delta$ Approximation}
+With the Dirac-$\delta$ approximation for $f_\phi$ and $f_\varphi$ as
+\begin{align}
+    f_\phi(t, \rmp_\phi) & \simeq \frac{2 \pi^2}{\rmp_\phi^2} n_\phi(t) \delta(\rmp_\phi - \epsilon), \\
+    f_\varphi\qty(t, \rmp_\varphi) & \simeq \frac{2 \pi^2}{\rmp_\varphi^2} n_\varphi(t) \delta\qty(\rmp_\varphi - \frac{m_\phi}{2} \frac{a_\ini}{a(t)}),
+\end{align}
+the collision term can be integrated directly as
 
 \section{Numerical Results}
 

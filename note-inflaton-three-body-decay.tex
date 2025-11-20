@@ -35,7 +35,7 @@
 \input{LaTeX-commands}
 \input{math-commands}
 
-\title{Note on Bose(-Einstein) Enhancement in Gravitational Wave Production from Reheating}
+\title{Note on Three-Body Decay of Inflatons}
 \author{Quan-feng WU\email{wuquanfeng@ihep.ac.cn}}
 \affil{
     Institute of High Energy Physics, Chinese Academy of Sciences, \\
@@ -58,38 +58,7 @@
 
 \section{Preliminaries}
 
-In this note, we consider two scalar particles $\phi$ and $\varphi$ with masses $m_\phi > 0$ and $m_\varphi \simeq 0$, respectively.
-These two scalar particles interact with each other via the interaction term of
-\begin{equation}
-    \Lagrangian[\mathrm{int}][\phi, \varphi] = \frac{\lambda}{2} \phi \varphi^2
-\end{equation}
-with $\lambda$ being the coupling parameter that has the mass dimension of one.
-
-The Boltzmann transport equation (BTE) for $f(t, \rmp)$ reads
-\begin{equation}
-    \pdv{f}{t} - H \rmp_\phi \pdv{f}{\rmp_\phi} = \CT[f][][t, \rmp],
-\end{equation}
-where $H$ is the Hubble parameter and $\CT[f]$ is the collision term for $f$.
-
-\section{Background Evolutions}
-
-Intially, we consider the Universe is filled with only $\phi$ particles whose initial distribution is given by
-\begin{equation}
-    f_\phi\qty(t_\ini, \rmp_\phi) = \frac{\twopi[2]}{2 \rmp_\phi^2} n_\phi^\upini \delta\qty(\rmp_\phi - 0^+),
-    \label{eq:initial-f_phi}
-\end{equation}
-where $0^+$ is an infinitesimal to regularize the behavior of $f_\phi$ at $\rmp_\phi \to 0^+$.
-It is easy to verify that
-\begin{equation}
-    \int \frac{\dd[3]{\vb{p}_\phi}}{\twopi[3]} f_\phi\qty(t_\ini, \rlsmp_\phi) = \int_0^\infty \frac{\rmp_\phi^2 \dd{\rmp_\phi}}{2 \pi^2} \frac{2 \pi^2}{\rmp_\phi^2} \delta\qty(\rmp_\phi - 0^+) = n_\phi^\upini.
-\end{equation}
-Then, the reheating process is triggered by the decay of $\phi$ into $\varphi$ particles.
-
-The main decay channel of $\phi$ is assumed to be $\phi \to \varphi + \varphi$
-
-\section{Preliminaries}
-
-In this note, we consider two scalar particles $\phi$ and $\varphi$.
+In this note, we are going to consider two scalar particles $\phi$ and $\varphi$.
 The mass of $\phi$ is $m_\phi > 0$, while $\varphi$ is massless.
 These two scalar particles interact with each other via the interaction term of
 \begin{equation}
@@ -97,7 +66,7 @@ These two scalar particles interact with each other via the interaction term of
 \end{equation}
 with $\lambda$ being the coupling parameter that has the mass dimension of one.
 
-The initial distribution of $\phi$ is given by
+We are going to consider the initial distribution of $\phi$ as
 \begin{equation}
     f_\phi\qty(t_\ini, \rmp_\phi) = \frac{\twopi[2]}{2 \rmp_\phi^2} n_\phi^\upini \delta(\rmp_\phi - \epsilon)
     \label{eq:initial-condition-for-f_phi}

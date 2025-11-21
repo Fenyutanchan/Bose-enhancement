@@ -76,14 +76,101 @@ where in the last step we assumed that $f_h \ll 1$ for $\lambda^2 / \MPl^2$ supp
 
 After some lengthy calculations (including Dirac-$\delta$ function approximation for $f_\varphi$), we obtain the following results:
 \begin{align}
-    \CT[f_\phi][\phi \to \varphi \varphi h][t, \rmp_\phi][(1)] = {} & \frac{m_\phi f_\phi(t, \rmp_\phi)}{64 \twopi[3]} \frac{\lambda^2}{\MPl^2} \qty[2 \ln(2 \delta_h) + 3 - 8 \delta_h + 4 \delta_h^2] \tilde{\Theta}\qty(\delta_h \le \frac{1}{2}) \\
-    \CT[f_\phi][\phi \to \varphi \varphi h][t, \rmp_\phi][(2)] = {} & \frac{n_\varphi(t) f_\phi(t, \rmp_\phi)}{2 (\twopi) m_\phi^2} \frac{\lambda^2}{\MPl^2} \qty[\frac{a(t)}{a_\ini}]^2 \begin{dcases}
-        \frac{a_\ini}{a(t)} \frac{1 - \frac{a_\ini}{2 a(t)}}{1 - \frac{a_\ini}{a(t)}} + \ln(1 - \frac{a_\ini}{a(t)}) & \delta_h \le \frac{1}{2} \qty[1 - \frac{a_\ini}{a(t)}] \\
-        \frac{1}{4 \delta_h} + \ln(2 \delta_h) - \delta_h & \delta_h \ge \frac{1}{2} \qty[1 - \frac{a_\ini}{a(t)}]
+    \CT[f_\phi][\phi \to \varphi \varphi h][t, \rmp_\phi][(1)] = {} & \frac{m_\phi f_\phi(t, \rmp_\phi)}{64 \twopi[3]} \frac{\lambda^2}{\MPl^2} \qty[2 \ln(2 \delta_h) + 3 - 8 \delta_h + 4 \delta_h^2] \tilde{\Theta}\qty(\delta_h \le \frac{1}{2}), \\
+    \CT[f_\phi][\phi \to \varphi \varphi h][t, \rmp_\phi][(2)] = {} & -\frac{n_\varphi(t) f_\phi(t, \rmp_\phi)}{2 (\twopi) m_\phi^2} \frac{\lambda^2}{\MPl^2} \qty[\frac{a(t)}{a_\ini}]^2 \nonumber \\
+    & \qquad {} \times \begin{dcases}
+        \frac{a_\ini}{a(t)} \frac{1 - \frac{a_\ini}{2 a(t)}}{1 - \frac{a_\ini}{a(t)}} + \ln(1 - \frac{a_\ini}{a(t)}) & \delta_h \le \frac{1}{2} \qty[1 - \frac{a_\ini}{a(t)}], \\
+        \frac{1}{4 \delta_h} + \ln(2 \delta_h) - \delta_h & \delta_h \ge \frac{1}{2} \qty[1 - \frac{a_\ini}{a(t)}],
     \end{dcases} \\
-    \CT[f_\phi][\phi \to \varphi \varphi h][t, \rmp_\phi][(3)] = {} & \frac{\pi n_\varphi^2(t) f_\phi(t, \rmp_\phi)}{4 m_\phi^5} \frac{\lambda^2}{\MPl^2} \qty[\frac{a(t)}{a_\ini}]^4 \qty[\frac{1 - \frac{2 a_\ini}{a(t)}}{1 - \frac{a_\ini}{a(t)}}]^2 \tilde{\Theta}\qty[\frac{a(t)}{a_\ini} \le 2] \tilde{\Theta}\qty(\delta_h \le \min\qty{\frac{1}{2}, 1 - \frac{a_\ini}{a(t)}}),
+    \CT[f_\phi][\phi \to \varphi \varphi h][t, \rmp_\phi][(3)] = {} & -\frac{\pi n_\varphi^2(t) f_\phi(t, \rmp_\phi)}{4 m_\phi^5} \frac{\lambda^2}{\MPl^2} \qty[\frac{a(t)}{a_\ini}]^4 \qty[\frac{1 - \frac{2 a_\ini}{a(t)}}{1 - \frac{a_\ini}{a(t)}}]^2 \nonumber \\
+    & \qquad {} \times \tilde{\Theta}\qty[\frac{a(t)}{a_\ini} \le 2] \tilde{\Theta}\qty(\delta_h \le 1 - \frac{a_\ini}{a(t)}),
 \end{align}
-where $0 < \delta_h < 1/2$ is an infrared cutoff to regularize the soft graviton divergence.
+where $0 < \delta_h \le 1/2$ is an infrared cutoff to regularize the soft graviton divergence.
+Then, we apply that
+\begin{equation}
+    f_\phi(t, \rmp_\phi) = \frac{\twopi[2]}{2 \rmp_\phi} n_\phi(t) \delta\qty(\rmp_\phi - 0^+),
+\end{equation}
+which satisfies
+\begin{equation}
+    \int \frac{\dd[3]{\vb{p}_\phi}}{\twopi[3]} f_\phi(t, \rmp_\phi) = n_\phi(t).
+\end{equation}
+Therefore, the integrated collision terms read
+\begin{align}
+    \int \frac{\dd[3]{\vb{p}_\phi}}{\twopi[3]} \CT[f_\phi][\phi \to \varphi \varphi h][t, \rmp_\phi][(1)] = {} & \frac{m_\phi n_\phi(t)} {64 \twopi[3]} \frac{\lambda^2}{\MPl^2} \qty[2 \ln(2 \delta_h) + 3 - 8 \delta_h + 4 \delta_h^2] \tilde{\Theta}\qty(\delta_h \le \frac{1}{2}), \label{eq:integrated-collision-term-for-ϕ_TO_φφh-1} \\
+    \int \frac{\dd[3]{\vb{p}_\phi}}{\twopi[3]} \CT[f_\phi][\phi \to \varphi \varphi h][t, \rmp_\phi][(2)] = {} & -\frac{n_\phi(t) n_\varphi(t)}{2 (\twopi) m_\phi^2} \frac{\lambda^2}{\MPl^2} \qty[\frac{a(t)}{a_\ini}]^2 \nonumber \\
+    & \qquad {} \times \begin{dcases}
+        \frac{a_\ini}{a(t)} \frac{1 - \frac{a_\ini}{2 a(t)}}{1 - \frac{a_\ini}{a(t)}} + \ln(1 - \frac{a_\ini}{a(t)}) & \delta_h \le \frac{1}{2} \qty[1 - \frac{a_\ini}{a(t)}], \\
+        \frac{1}{4 \delta_h} + \ln(2 \delta_h) - \delta_h & \delta_h \ge \frac{1}{2} \qty[1 - \frac{a_\ini}{a(t)}],
+    \end{dcases} \label{eq:integrated-collision-term-for-ϕ_TO_φφh-2} \\
+    \int \frac{\dd[3]{\vb{p}_\phi}}{\twopi[3]} \CT[f_\phi][\phi \to \varphi \varphi h][t, \rmp_\phi][(3)] = {} & -\frac{\pi n_\phi(t) n_\varphi^2(t)}{4 m_\phi^5} \frac{\lambda^2}{\MPl^2} \qty[\frac{a(t)}{a_\ini}]^4 \qty[\frac{1 - \frac{2 a_\ini}{a(t)}}{1 - \frac{a_\ini}{a(t)}}]^2 \nonumber \\
+    & \qquad {} \times \tilde{\Theta}\qty[\frac{a(t)}{a_\ini} \le 2] \tilde{\Theta}\qty(\delta_h \le 1 - \frac{a_\ini}{a(t)}). \label{eq:integrated-collision-term-for-ϕ_TO_φφh-3}
+\end{align}
+
+The Boltzmann transport equation reads
+\begin{equation}
+    \pdv{f_\phi}{t} - H \rmp_\phi \pdv{f_\phi}{\rmp_\phi} = \CT[f_\phi][][t, \rmp_\phi],
+\end{equation}
+whose integrated form is given by
+\begin{equation}
+    \dv{n_\phi}{t} + 3 H n_\phi(t) = \int \frac{\dd[3]{\vb{p}_\phi}}{\twopi[3]} \CT[f_\phi][][t, \rmp_\phi].
+\end{equation}
+With the change of variable $t \to a$, we have
+\begin{equation}
+    \dv{a}\qty(n_\phi a^3) = a H(a) \int \frac{\dd[3]{\vb{p}_\phi}}{\twopi[3]} \CT[f_\phi][][t, \rmp_\phi].
+\end{equation}
+Previously, we have considered only the $\phi \to \varphi \varphi$ decay channel, which gives the evolution of $n_\phi a^3$ as
+\begin{equation}
+    \dv{a}\qty(n_\phi a^3) = -\frac{\lambda^2}{32 \pi m_\phi a H(a)} \exp[\frac{\pi \lambda^2}{m_\phi^4 a^3 H(a)} \qty(n_\phi a^3)] \qty(n_\phi a^3).
+\end{equation}
+Also we have the decay width for $\phi \to \varphi \varphi$ as
+\begin{equation}
+    \Gamma_{\phi \to \varphi \varphi} = \frac{\lambda^2}{32 \pi m_\phi},
+\end{equation}
+which leads to
+\begin{equation}
+    \dv{a}\qty(n_\phi a^3) = -\frac{\Gamma_{\phi \to \varphi \varphi}}{a H(a)} \exp[\frac{\pi \lambda^2}{m_\phi^4 a^3 H(a)} \qty(n_\phi a^3)] \qty(n_\phi a^3).
+\end{equation}
+Therefore, far before $H \simeq \Gamma_{\phi \to \varphi \varphi}$, the comoving number density $n_\phi a^3$ is almost a constant, which can be evaluated as
+\begin{equation}
+    \eval{n_\phi a^3}_{H \gg \Gamma_{\phi \to \varphi \varphi}} = \min\qty{n_\phi^\upini a_\ini^3, \frac{m_\phi^4 H_\ini}{\pi \lambda^2} \ln(\frac{32 \pi m_\phi H_\ini}{\lambda^2})}.
+\end{equation}
+Now we take the case of
+\begin{equation}
+    \frac{m_\phi^4 H_\ini}{\pi \lambda^2} \ln(\frac{32 \pi m_\phi H_\ini}{\lambda^2}) \ll n_\phi^\upini a_\ini^3,
+\end{equation}
+which also means that the Bose enhancement effect is significant and thus the Universe is radiation-dominated by reheatons.
+Now we can further consider the effect of $\phi \to \varphi \varphi h$ decay channel, which will further reduce $n_\phi a^3$.
+
+Before proceeding, we should consider the initial Hubble parameter $H_\ini$.
+The Universe backgound is depicted by the Friedmann-Lemaître-Robertson-Walker (FLRW) metric, which is a curved spacetime.
+However, we are utilizing the flat-spacetime quantum field theory (QFT) in our calculations, which is only valid when the typical energy scale is much larger than the spacetime curvature scale \cite[p.~474]{Weinberg:2008zzc}, \ie, $H_\ini \ll m_\phi$ in our case.
+
+Hereafter, $H$ is taken as the infrared cutoff for the same reason as above, which means $\delta_h \equiv H / m_\phi$ and $\delta_h^\upini \equiv H_\ini / m_\phi$.
+Therefore, three major conditions should be considered regarding $\delta_h^\upini$:
+
+\paragraph{\boldmath Case A: $\delta_h^\upini \le 1/4$.}
+In this case, three stages can be identified according to Eqs.~\eqref{eq:integrated-collision-term-for-ϕ_TO_φφh-1}--\eqref{eq:integrated-collision-term-for-ϕ_TO_φφh-3}:
+\begin{enumerate}[label=\alph*)]
+    \item $1 \le a / a_\ini < \qty(1 - \delta_h^\upini)^{-1}$
+    \item $\qty(1 - \delta_h^\upini)^{-1} \le a / a_\ini < \qty(1 - 2 \delta_h^\upini)^{-1}$
+    \item $\qty(1 - 2 \delta_h^\upini)^{-1} \le a / a_\ini < 2$
+\end{enumerate}
+
+\paragraph{\boldmath Case B: $1/4 \le \delta_h^\upini < 1/2$.}
+In this case, we have also three stages as:
+\begin{enumerate}[label=\alph*)]
+    \item $1 \le a / a_\ini < \qty(1 - \delta_h^\upini)^{-1}$
+    \item $\qty(1 - \delta_h^\upini)^{-1} < a / a_\ini < 2$
+    \item $2 \le a / a < \qty(1 - 2 \delta_h^\upini)^{-1}$
+\end{enumerate}
+
+\paragraph{\boldmath Case C: $1/2 \le \delta_h^\upini < 1$.}
+Notice that the Hubble parameter $H$ will decrease as the Universe expands as
+\begin{equation}
+    H(a) = H_\ini \qty(\frac{a_\ini}{a})^2,
+\end{equation}
+which means that the Hubble parameter $H$ will eventually be smaller than $m_\phi / 2$, \ie, $\delta_h < 1/2$.
+Form this point onward, the situation would be reduced to Case B with $H_\ini$ and $n_\phi^\upini$ replaced by $m_\phi / 2$ and the corresponding $n_\phi$ at that time, respectively.
 
 % \clearpage
 % \appendix\section*{Appendix}\addcontentsline{toc}{section}{Appendix}
